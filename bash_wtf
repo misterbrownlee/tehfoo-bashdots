@@ -66,12 +66,18 @@ function parse_git_branch {
 
 #PS1='[\u :\W$(parse_git_branch)]$'
 #PS1="$YELLOW\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY $ "
-PS1="$LIGHT_RED\h-$BLUE\u: \W $YELLOW\$(parse_git_branch)$WHITE$"
+PS1="$BLUE\h-\u: \W $YELLOW\$(parse_git_branch)$WHITE$"
 
 export PS1
 
 # This loads RVM into a shell session.
 # for Ruby RVM usage
 [[ -s "/Users/brownlee/.rvm/scripts/rvm" ]] && source "/Users/brownlee/.rvm/scripts/rvm" 
+
+
+# create a file and open it
+function ntxt() {
+	touch $1; edit $1
+}
 
 

@@ -51,7 +51,7 @@ alias nonpush='git-notpushed'
 alias gca='git commit -a'
 alias gcv='git commit -v'
 alias gcva='git commit -v -a'
-alias gc='git commit -m'
+alias gc='git commit'
 alias gcam='git commit --amend'
 
 alias gco='git checkout'
@@ -89,11 +89,11 @@ function grd() {
 
 # magically commit a pending changes 
 # args are commit message
-function gcam() {
-    git commit -v -a -m "$*"
+function gcm() {
+    git commit -v -m "$*"
 }
 # magically add all and commit pending changes
-function gacam() {
+function gacm() {
     git add -A && git commit -v -a -m "$*"
 }
 # setup a tracking branch from [remote] [branch_name]

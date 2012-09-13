@@ -1,0 +1,77 @@
+# the things that aren't teh others
+echo '  loading wtf'
+
+# --------------------------------
+# for git mostly
+export EDITOR="txt -w"
+
+# --------------------------------
+# LSCOLORS 
+export CLICOLOR=1
+export LSCOLORS=GxeCxxxxxxxx
+
+# --------------------------------
+# bash history
+export HISTCONTROL=erasedups #ignoredups
+
+# --------------------------------
+# good old ant...
+export ANT_OPTS="-Xms512m -Xmx512m -Dfile.encoding=UTF-8 -XX:MaxPermSize=512m"
+
+# --------------------------------
+# someday Perforce will die
+export P4USER=brownlee
+export P4PORT=theoden.corp.adobe.com:1760
+#export P4PORT=yorktown.corp.adobe.com:1770
+#export P4PORT=alaska.corp.adobe.com:1700
+
+# --------------------------------
+# totally *hates*
+# but the OSGi goons are all about it
+export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=1024m"
+#export M2_ROOT="/usr/local/maven/current"
+#export M2_REPO="~/.m2/"
+#export M2="$M2_ROOT/bin"
+
+
+# --------------------------------
+# Add git related details to prompt if available
+# some set up around status coloring
+BLUE="\[\033[1;36m\]"; 
+RED="\[\033[0;31m\]"; 
+LIGHT_RED="\[\033[1;31m\]"; 
+GREEN="\[\033[0;32m\]"; 
+WHITE="\[\033[1;37m\]"; 
+LIGHT_GRAY="\[\033[0;37m\]"; 
+YELLOW="\[\033[1;33m\]";
+
+# GIT PROMPT (http://gist.github.com/120804)
+#function parse_git_branch { 
+#  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \(\1\)/'; 
+#}
+
+#function parse_git_status { 
+#  git status 2> /dev/null | sed -e '/(working directory clean)$/!d' | wc -l; 
+#}
+
+#function check_git_changes { 
+  # tput setaf 1 = RED, tput setaf 2 = GREEN
+#  [ `parse_git_status` -ne 1 ] && tput setaf 1 || tput setaf 2
+#} 
+
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/{\1}/'
+}
+
+#PS1='[\u :\W$(parse_git_branch)]$'
+#PS1="$YELLOW\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY $ "
+PS1="$LIGHT_RED\h-$BLUE\u: \W $YELLOW\$(parse_git_branch)$WHITE$"
+
+export PS1
+
+# This loads RVM into a shell session.
+# for Ruby RVM usage
+[[ -s "/Users/brownlee/.rvm/scripts/rvm" ]] && source "/Users/brownlee/.rvm/scripts/rvm" 
+
+

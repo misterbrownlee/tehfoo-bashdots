@@ -1,0 +1,19 @@
+echo '  loading paths'
+
+# git
+GIT_PATH="/usr/local/git/" #bin/git"
+
+# actionscript 
+export FLEX_HOME=~/projects/tools/sdks/latest
+
+#android sdk
+ANDROID_SDK="~/projects/tools/sdks/android_latest"
+ANDROID_PATHS=":$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools"
+
+# some wtf things
+WORK_EXTRAS="~/projects/tools/bin"
+
+
+
+# export thems
+export PATH=$PATH:~/bin:$FLEX_HOME/bin:$ANDROID_PATHS:$GIT_PATH/bin:$WORK_EXTRAS

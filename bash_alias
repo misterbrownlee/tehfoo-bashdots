@@ -9,11 +9,11 @@ alias vox='open -a Vox'
 alias tw='open -a TextWrangler'
 alias edit='txt'
 alias safp='/Users/brownlee/projects/tools/fpdebugger/standaloneplayer.app/Contents/MacOS/fp'
-alias edit-profile='cp ~/.bash_profile ~/.bash_profilebackup; mate ~/.bash_profile'
+alias edit-profile='edit /Users/brownlee/Documents/code/tools/dotfiles/bash'
 alias ssh-xddev='ssh -l xddadmin xddev.corp.adobe.com'
 alias logcat='adb logcat'
 alias mnt='adb shell' 
-alias txt='open -a /Applications/Sublime\ Text\ 2.app/'
+alias txt='subl'
 
 # git aliases
 alias ga='git add'
@@ -32,6 +32,11 @@ alias chrome='open -a /Applications/Chrome.app'
 
 # lol kristoferjoseph
 alias bitch='sudo'
+
+# command functions
+function mkcdir() {
+    mkdir $1; cd $1
+}
 
 #nodefront
 #alias nff='nodefront fetch'
@@ -61,6 +66,8 @@ alias gbranch='git branch -a'
 alias ga='git add'
 alias gaa='git add -A'
 alias gai='git add -i'
+
+alias unstage='git reset HEAD'
 
 alias eglobal='edit .git/config'
 alias gl='git log'

@@ -3,7 +3,7 @@ echo '  loading wtf'
 
 # --------------------------------
 # for git mostly
-export EDITOR="txt -w"
+export EDITOR="subl -w"
 
 # --------------------------------
 # LSCOLORS 

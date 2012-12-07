@@ -1,25 +1,24 @@
 # Ya-SoMa-CheeShe
-
 ###### (Yet Another Stolen Markdown Cheat Sheet)
----
 
 I started to write my own version of this, then got lazy. Instead, I poached some markdown from the [markdown-here](https://github.com/adam-p/markdown-here) project, which has a great cheat-sheet in their [wiki](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).  For more complete info, see [John Gruber's original spec](http://daringfireball.net/projects/markdown/) and the [Github-flavored Markdown info page](http://github.github.com/github-flavored-markdown/).
 
----
+Actually, kind of broken right now?
 
 # Table of Contents
-[Headers](#headers)
-[Emphasis](#emphasis)
-[Lists](#lists)
-[Links](#links)
-[Images](#images)
-[Code and Syntax Highlighting](#code)
-[Blockquotes](#blockquotes)
-[Inline HTML](#html)
-[Horizontal Rule](#hr)
-[Line Breaks](#lines)
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+[Lists](#lists)  
+[Links](#links)  
+[Images](#images)  
+[Code and Syntax Highlighting](#code)  
+[Blockquotes](#blockquotes)  
+[Inline HTML](#html)  
+[Horizontal Rule](#hr)  
+[Line Breaks](#lines)  
 
-<a name="headers"/>
+<div id="headers">&nbsp;</div>  
+
 ## Headers
 
 ```no-highlight
@@ -54,7 +53,7 @@ Alt-H1
 Alt-H2
 ------
 
-<a name="emphasis"/>
+<div id="emphasis">&nbsp;</div> 
 ## Emphasis
 
 ```no-highlight

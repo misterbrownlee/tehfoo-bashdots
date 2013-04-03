@@ -1,6 +1,10 @@
 # get your alias on
 echo '  loading aliases'
 
+DOTFILES_PATH='~/Documents/code/tools/dotfiles/bash'
+
+alias fixbash='edit $DOTFILES_PATH'
+
 alias ll='ls -lah'
 alias epoch='date "+%s"'
 alias test-time='date +%s'
@@ -14,6 +18,7 @@ alias ssh-xddev='ssh -l xddadmin xddev.corp.adobe.com'
 alias logcat='adb logcat'
 alias mnt='adb shell' 
 alias txt='subl'
+alias gcc='xcrun gcc'
 
 # git aliases
 alias ga='git add'
@@ -27,7 +32,7 @@ alias cdwork='cd ~/Documents/code/workspace'
 
 
 # softwares
-alias chrome='open -a /Applications/Chrome.app'
+alias chrome='open -a /Applications/Google\ Chrome.app'
 
 
 # lol kristoferjoseph
@@ -100,18 +105,23 @@ function grd() {
 function gcm() {
     git commit -v -m "$*"
 }
+
 # magically add all and commit pending changes
 function gcA() {
     git add -A && git commit -v -a -m "$*"
 }
+
 # setup a tracking branch from [remote] [branch_name]
 function gtrack() {
   git branch --track $2 $1/$2 && git checkout $2
 }
+
 # roll back changes to a file
 function grb() {
   rm $1
   git checkout $1
 }
 
-
+# git-cheat burp some of these aliases
+# so I can actually use them
+alias git-cheat="open -a /Applications/Google\ Chrome.app $DOTFILES_PATH/git-cheat.md"

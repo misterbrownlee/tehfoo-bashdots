@@ -2,4 +2,4 @@ echo 'loading dotfiles'
 . ~/bin/dotfiles/bash_alias
 . ~/bin/dotfiles/bash_path
 . ~/bin/dotfiles/bash_wtf
-#. ~/bin/dotfiles/bash_greeting
+. ~/bin/dotfiles/bash_greeting

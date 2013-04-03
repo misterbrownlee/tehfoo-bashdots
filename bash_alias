@@ -68,6 +68,7 @@ alias gaa='git add -A'
 alias gai='git add -i'
 
 alias unstage='git reset HEAD'
+alias rollback='grb'
 
 alias eglobal='edit .git/config'
 alias gl='git log'
@@ -94,13 +95,13 @@ function grd() {
   git push origin :$1
 }
 
-# magically commit a pending changes 
+# magically commit all pending changes 
 # args are commit message
 function gcm() {
     git commit -v -m "$*"
 }
 # magically add all and commit pending changes
-function gacm() {
+function gcA() {
     git add -A && git commit -v -a -m "$*"
 }
 # setup a tracking branch from [remote] [branch_name]

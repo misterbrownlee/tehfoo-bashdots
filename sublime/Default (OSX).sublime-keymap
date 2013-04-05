@@ -1,0 +1,13 @@
+[
+    { "keys": ["super+d"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },  
+
+    { "keys": ["ctrl+alt+up"], "command": "swap_line_up" },
+    { "keys": ["ctrl+alt+down"], "command": "swap_line_down" },
+
+    /*{ "keys": ["ctrl+super+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
+    { "keys": ["ctrl+super+up"], "command": "scroll_lines", "args": {"amount": -1.0} },*/
+    
+    { "keys": ["super+shift+h"], "command": "html_entitize" },
+    { "keys": ["super+shift+u"], "command": "url_encode" }
+
+]

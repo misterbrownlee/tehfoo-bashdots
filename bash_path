@@ -1,7 +1,7 @@
 echo '  loading paths'
 
 # git
-GIT_PATH="/usr/local/git/" #bin/git"
+GIT_PATH="/usr/local/bin/git"
 
 # ruby
 RUBY_PATH="/usr/local/Cellar/ruby/latest/bin"

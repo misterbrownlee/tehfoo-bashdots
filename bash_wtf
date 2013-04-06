@@ -76,8 +76,17 @@ export PS1
 
 
 # create a file and open it
-function ntxt() {
+function newfile() {
 	touch $1; edit $1
+}
+
+# new terminal window at current location
+function nwh() {
+    osascript -e 'on run argv
+        tell app "Terminal"
+            do script "cd " & item 1 of argv
+        end tell
+    end run' `pwd`
 }
 
 

@@ -122,6 +122,18 @@ function grb() {
   git checkout $1
 }
 
+# clone a repo from github; args are [orgname] [repo]
+function clone {
+  echo "trying git clone git@github.com:$1/$2.git"
+  git clone git@github.com:$1/$2.git
+}
+
+# clone a repo from git.corp.adobe.com; args are [orgname] [repo]
+function aclone {
+  echo "trying git clone git@git.corp.adobe.com:$1/$2.git"
+  git clone git@git.corp.adobe.com:$1/$2.git
+}
+
 # git-cheat burp some of these aliases
 # so I can actually use them
 alias git-cheat="open -a /Applications/Google\ Chrome.app $DOTFILES_PATH/git-cheat.md"

@@ -28,11 +28,12 @@ alias gc='git commit'
 alias cdcode='cd ~/Documents/code'
 alias cdtools='cd ~/Documents/code/tools'
 alias cdxd='cd ~/Documents/code/xd'
-alias cdwork='cd ~/Documents/code/workspace'
+alias cdfoo='cd ~/Documents/code/tehfoo'
 
 
 # softwares
 alias chrome='open -a /Applications/Google\ Chrome.app'
+alias opendb='open -a  /Applications/Utilities/SQLite\ Database\ Browser\ 2.0\ b1.app/'
 
 
 # lol kristoferjoseph
@@ -137,3 +138,10 @@ function aclone {
 # git-cheat burp some of these aliases
 # so I can actually use them
 alias git-cheat="open -a /Applications/Google\ Chrome.app $DOTFILES_PATH/git-cheat.md"
+
+
+# markdown-cheat remind me I haz stupid
+# so I can actually use them
+alias markdown-cheat="open -a /Applications/Google\ Chrome.app $DOTFILES_PATH/markdown-cheat.md"
+
+

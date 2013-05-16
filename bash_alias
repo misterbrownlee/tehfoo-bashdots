@@ -44,6 +44,10 @@ function mkcdir() {
     mkdir $1; cd $1
 }
 
+# mongo
+alias upmongo='launchctl load /usr/local/opt/mongodb/homebrew.mxcl.mongodb.plist'
+alias downmongo='launchctl unload /usr/local/opt/mongodb/homebrew.mxcl.mongodb.plist'
+
 #nodefront
 #alias nff='nodefront fetch'
 #alias nfi='nodefront insert'

@@ -5,7 +5,10 @@
 > gc `git commit`  
 > gst `git status`  
 > gpull `git pull`  
+> gpm `git pull origin master`  
+> gfm `git fetch origin master`  
 > gpush `git push`  
+> gpm `git push origin master`  
 > gdiff `git diff --diff-filter ACMRTUXB`  
 > gdiffm `git diff master`  
 > gmerge `git mergetool`  
@@ -34,6 +37,8 @@
 > gsu `git submodule foreach git pull`  
 > gsp `git submodule foreach git push`  
 > gsa `git submodule foreach git add -A`  
+
+> stashlist `git stash list`
 
 # prune remote branches
 > grp `git remote prune origin`

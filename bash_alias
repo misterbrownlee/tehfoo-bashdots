@@ -57,7 +57,10 @@ alias downmongo='launchctl unload /usr/local/opt/mongodb/homebrew.mxcl.mongodb.p
 # git
 alias gst='git status'
 alias gpull='git pull'
+alias gplm='git pull origin master'
+alias gfm='git fetch origin master'
 alias gpush='git push'
+alias gpm='git push origin master'
 alias gdiff='git diff --diff-filter=ACMRTUXB'
 alias gdiffm='git diff master'
 alias gmerge='git mergetool'
@@ -86,6 +89,8 @@ alias gl='git log'
 alias gsu='git submodule foreach git pull'
 alias gsp='git submodule foreach git push'
 alias gsa='git submodule foreach git add -A'
+
+alias stashlist='git stash list'
 
 # prune remote branches
 alias grp='git remote prune origin'

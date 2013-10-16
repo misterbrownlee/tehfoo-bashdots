@@ -55,6 +55,8 @@ alias ninstalld='npm install --save-dev'
 #git - extra short alias for .gitconfig aliases :)
 alias g='git'
 alias gco='g co'
+alias gc='g c'
+alias gcm='g cm'
 alias gb='g b'
 alias ga='g a'
 alias gba='g ba'
@@ -62,8 +64,6 @@ alias gst='g st'
 alias gcA='g cA'
 alias gplm='g plm'
 alias gpm='g pm'
-
-
 
 # clone a repo from github; args are [orgname] [repo]
 function clone {

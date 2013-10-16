@@ -1,4 +1,4 @@
-echo '  loading paths'
+# echo '  loading paths'
 
 # git
 GIT_PATH="/usr/local/bin/git"
@@ -16,13 +16,11 @@ ANDROID_PATHS="$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools"
 # npm global
 NPM_GLOBAL=/usr/local/share/npm/bin
 
+# hates RVM
 RVM=$HOME/.rvm/bin 
-
 
 # some wtf things
 WORK_EXTRAS="~/projects/tools/bin"
-
-
 
 # export thems
 export PATH=$PATH:~/bin:$FLEX_HOME/bin:$ANDROID_PATHS:$GIT_PATH/bin:$WORK_EXTRAS:$RUBY_PATH:$NPM_GLOBAL:$RVM

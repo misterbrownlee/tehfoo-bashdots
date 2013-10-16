@@ -1,5 +1,5 @@
 # the things that aren't teh others
-echo '  loading wtf'
+# echo '  loading wtf'
 
 # --------------------------------
 # for git mostly
@@ -35,8 +35,7 @@ export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=1024m"
 
 
 # --------------------------------
-# Add git related details to prompt if available
-# some set up around status coloring
+# Some random colors
 BLUE="\[\033[1;36m\]"; 
 RED="\[\033[0;31m\]"; 
 LIGHT_RED="\[\033[1;31m\]"; 
@@ -45,30 +44,49 @@ WHITE="\[\033[1;37m\]";
 LIGHT_GRAY="\[\033[0;37m\]"; 
 YELLOW="\[\033[1;33m\]";
 
-# GIT PROMPT (http://gist.github.com/120804)
-#function parse_git_branch { 
-#  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \(\1\)/'; 
-#}
 
-#function parse_git_status { 
-#  git status 2> /dev/null | sed -e '/(working directory clean)$/!d' | wc -l; 
-#}
+# --------------------------------
+# Add git related details to prompt if available
+# some set up around status coloring
+# source ~/bin/dotfiles/git-completion.bash
 
-#function check_git_changes { 
-  # tput setaf 1 = RED, tput setaf 2 = GREEN
-#  [ `parse_git_status` -ne 1 ] && tput setaf 1 || tput setaf 2
-#} 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
+# if [ -f `brew --prefix git`/share/git-core/contrib/completion/git-prompt.sh ]; then
+#   . `brew --prefix git`/share/git-core/contrib/completion/git-prompt.sh
+# fi
 
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/{\1}/'
-}
+# source ~/bin/dotfiles/git-prompt.sh
 
+## add completetion for aliases
+__git_complete g __git_main
+__git_complete gco _git_checkout
+
+# some prompt config
+GIT_PS1_SHOWCOLORHINTS='yut'
+GIT_PS1_SHOWUNTRACKEDFILES='kthx';
+GIT_PS1_SHOWDIRTYSTATE='srsly'
+
+# old git function parse_git_branch {
+#   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/{\1}/'
+# }
+
+# prompt choices... because it matters
 #PS1='[\u :\W$(parse_git_branch)]$'
 #PS1="$YELLOW\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY $ "
-PS1="$BLUE\h-\u: \W $YELLOW\$(parse_git_branch)$WHITE$"
+# PS1="$BLUE\h-\u: \W $YELLOW\$(parse_git_branch)$WHITE$"
+# PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+# PS1="$BLUE\h-\u: \W $YELLOW\$(__git_ps1)$WHITE$"
+# export PS1
 
-export PS1
+# new hotness
+# PROMPT_COMMAND="__git_ps1 '$BLUE\h-\u:\W$WHITE' '\\$ '"
+PROMPT_COMMAND="__git_ps1 '$BLUE\u@\h$YELLOW: \W $WHITE' '\\$'"
+
+# Java... glad that's over with
+export JAVA_HOME=`/usr/libexec/java_home`
 
 # This loads RVM into a shell session.
 # for Ruby RVM usage

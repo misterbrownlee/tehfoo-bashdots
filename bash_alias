@@ -1,5 +1,5 @@
 # get your alias on
-echo '  loading aliases'
+# echo '  loading aliases'
 
 DOTFILES_PATH='~/Documents/code/tools/dotfiles/bash'
 
@@ -19,10 +19,7 @@ alias logcat='adb logcat'
 alias mnt='adb shell' 
 alias txt='subl'
 alias gcc='xcrun gcc'
-
-# git aliases
-alias ga='git add'
-alias gc='git commit'
+alias passgen='openssl rand -base64 32'
 
 # navigations
 alias cdcode='cd ~/Documents/code'
@@ -30,11 +27,9 @@ alias cdtools='cd ~/Documents/code/tools'
 alias cdxd='cd ~/Documents/code/xd'
 alias cdfoo='cd ~/Documents/code/tehfoo'
 
-
 # softwares
 alias chrome='open -a /Applications/Google\ Chrome.app'
 alias opendb='open -a  /Applications/Utilities/SQLite\ Database\ Browser\ 2.0\ b1.app/'
-
 
 # lol kristoferjoseph
 alias bitch='sudo'
@@ -54,83 +49,21 @@ alias downmongo='launchctl unload /usr/local/opt/mongodb/homebrew.mxcl.mongodb.p
 #alias nfl='nodefront compile -l'
 #alias nfm='nodefront minify'
 
-# git
-alias gst='git status'
-alias gpull='git pull'
-alias gplm='git pull origin master'
-alias gfm='git fetch origin master'
-alias gpush='git push'
-alias gpm='git push origin master'
-alias gdiff='git diff --diff-filter=ACMRTUXB'
-alias gdiffm='git diff master'
-alias gmerge='git mergetool'
-alias nonpush='git-notpushed'
+#npm
+alias ninstalld='npm install --save-dev'
 
-alias gca='git commit -a'
-alias gcv='git commit -v'
-alias gcva='git commit -v -a'
-alias gc='git commit'
-alias gcam='git commit --amend'
+#git - extra short alias for .gitconfig aliases :)
+alias g='git'
+alias gco='g co'
+alias gb='g b'
+alias ga='g a'
+alias gba='g ba'
+alias gst='g st'
+alias gcA='g cA'
+alias gplm='g plm'
+alias gpm='g pm'
 
-alias gco='git checkout'
-alias gb='git branch'
-alias gbranch='git branch -a'
 
-alias ga='git add'
-alias gaa='git add -A'
-alias gai='git add -i'
-
-alias unstage='git reset HEAD'
-alias rollback='grb'
-
-alias eglobal='edit .git/config'
-alias gl='git log'
-
-alias gsu='git submodule foreach git pull'
-alias gsp='git submodule foreach git push'
-alias gsa='git submodule foreach git add -A'
-
-alias stashlist='git stash list'
-
-# prune remote branches
-alias grp='git remote prune origin'
-
-# clone
-function gcl() {
-  git clone $1
-}
-
-# track remote branch
-function gtr() {
-  git checkout -b $1 origin/$1
-}
-
-# delete remote branch
-function grd() {
-  git push origin :$1
-}
-
-# magically commit all pending changes 
-# args are commit message
-function gcm() {
-    git commit -v -m "$*"
-}
-
-# magically add all and commit pending changes
-function gcA() {
-    git add -A && git commit -v -a -m "$*"
-}
-
-# setup a tracking branch from [remote] [branch_name]
-function gtrack() {
-  git branch --track $2 $1/$2 && git checkout $2
-}
-
-# roll back changes to a file
-function grb() {
-  rm $1
-  git checkout $1
-}
 
 # clone a repo from github; args are [orgname] [repo]
 function clone {

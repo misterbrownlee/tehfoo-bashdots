@@ -61,10 +61,12 @@ alias gb='g b' #branch
 alias ga='g a' #add
 alias gba='g ba' #branch -a
 alias gst='g st' #status
-alias gcA='g cA' #add + commit -m
+alias gac='g ac' #add + commit -m
 alias gplm='g plm' #pull origin master
 alias gpm='g pm' #push origin master
 alias gdiff='g diff' #diff --diff-filter=ACMRTUXB
+alias unstage='g unstage'
+alias glog='git log --graph --pretty="format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) %an, %ar%Creset"'
 
 # clone a repo from github; args are [orgname] [repo]
 function clone {

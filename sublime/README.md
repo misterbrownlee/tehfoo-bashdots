@@ -1,6 +1,11 @@
 # Hi, me.  It's me.
 
-I'm here remind you about how to symlink these so your SublimeText install picks up all your cozy feel good mods.
+I'm here remind you about how to symlink these so your SublimeText install picks up all your cozy feel good mods.  
+
+Most of this crap goes in:  
+
+    /Users/brownlee/Library/Application Support/Sublime Text 2/Packages
+
 
 ```
 cheezburgr-brownlee: ~ $cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/
@@ -15,10 +20,6 @@ drwxr-xr-x  51 brownlee  staff   1.7K Aug 22 10:53 ..
 -rw-r--r--   1 brownlee  staff   144B Apr  3 10:20 Preferences.sublime-settings
 cheezburgr-brownlee: User $mv Preferences.sublime-settings gtfo.original.settings
 cheezburgr-brownlee: User $mv Default\ \(OSX\).sublime-keymap gtfo.original.keymap
-cheezburgr-brownlee: User $ln -s ~/bin/bashprofile.txt 
-.DS_Store                         gtfo.original.keymap
-Default (Linux).sublime-keymap    gtfo.original.settings
-Default (Windows).sublime-keymap  
 cheezburgr-brownlee: User $ln -s ~/bin/dotfiles/sublime/Preferences.sublime-settings Preferences.sublime-settings
 cheezburgr-brownlee: User $ln -s ~/bin/dotfiles/sublime/Default\ \(OSX\).sublime-keymap Default\ \(OSX\).sublime-keymap
 

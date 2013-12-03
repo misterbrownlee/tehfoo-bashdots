@@ -8,11 +8,28 @@
 	<string>Espresso Libre</string>
 	<key>settings</key>
 	<array>
+<dict>
+<key>name</key>
+<string>mon_color</string>
+<key>scope</key>
+<string>mcol_a52a2aFF</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#a52a2aFF</string>
+<key>caret</key>
+<string>#FFFFFFFF</string>
+<key>foreground</key>
+<string>#FFFFFFFF</string>
+</dict>
+</dict>
+
+
 		<dict>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#241C18</string>
+				<string>#201C20</string>
 				<key>caret</key>
 				<string>#889AFF</string>
 				<key>foreground</key>
@@ -305,11 +322,11 @@
 			<key>name</key>
 			<string>Invalid trailing whitespace</string>
 			<key>scope</key>
-			<string>invalid.deprecated.trailing-whitespace</string>
+			<string>invalid.trailing-whitespace</string>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#FFD0D0</string>
+				<string>#F93232</string>
 			</dict>
 		</dict>
 		<dict>
@@ -399,4 +416,6 @@
 	<key>uuid</key>
 	<string>6B90703E-4E4B-43C8-9D32-921BEDF6D725</string>
 </dict>
+
+
 </plist>

@@ -1,36 +1,34 @@
-[alias]  
+[alias]
 ```
-  st = status
-  co = checkout
-  cob = !git checkout -b
+  a = add
+  aa = !git add -A
+  ac = !git add -A && git commit -m
+  acl = !git clone git@git.corp.adobe.com:$1/$2
+  ai = !git add -i
   b = branch
   ba = !git branch -a
-  a = add
-  aa = !git add - A
-  ai = !git add -i
   c = commit
   ca = !git commit -a
-  cv = !git commit -v
-  cm = !git commit -m
   cam = !git commit --amend
+  cleanup = !git remote prune origin && git gc && git clean -xdf
+  cm = !git commit -m
+  co = checkout
+  cob = !git checkout -b
+  cv = !git commit -v
+  delrm = !git push origin --delete $1
+  diff = !git diff --diff-filter=ACMRTUXB
+  done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1}
+  fm = !git fetch origin master
+  nuke = !git clean -xdf
+  p = push
   pl = pull
   plm = !git pull origin master
-  fm = !git fetch origin master
-  p = push
   pm = !git push origin master
-  diff = !git diff 
   r = reset
-  unstage = !git reset HEAD
+  rollback =  !rm $1 && git checkout $1
   rsm = !git reset --soft master
   rsom = !git reset --soft master
+  st = status
+  unstage = !git reset HEAD
   up = !git fetch origin && git rebase origin/master
-  done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1}
-  nuke = !git clean -xdf
-  cleanup = !git remote prune origin && git gc && git clean -xdf
-  cl = !git clone git@github.com$1/$2
-  acl = !git clone git@git.corp.adobe.com:$1/$2
-  delrm = !git push origin :$1
-  rollback =  !rm $1 && git checkout $1
-  cA = !git add -A && git commit -v -a -m "$*"
 ```
-

@@ -1,4 +1,13 @@
 {
+
+  "extensions": [
+    "md",
+    "mdown",
+    "mdwn",
+    "mmd",
+    "txt"],
+
     "enable_table_editor": true,
-    "trim_trailing_white_space_on_save": false
+    "trim_trailing_white_space_on_save": false,
+    "trailing_spaces_trim_on_save": false
 }

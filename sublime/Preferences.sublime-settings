@@ -1,16 +1,25 @@
 {
 	"auto_complete_commit_on_tab": true,
 	"caret_style": "wide",
-	"color_scheme": "Packages/Color Scheme - Default/WebExPert.tmTheme",
+	"color_pick_upcase": true,
+	"color_scheme": "Packages/User/WebExPert.tmTheme",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
-	"font_size": 13.0,
+	"font_size": 16.0,
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Stylus",
 		"Vintage",
-		"SublimeCodeIntel"
+		"EditorConfig",
+		"Markdown Preview",
+		"ColorPick",
+		"LoremIpsum",
+		"SublimeCodeIntel",
+		"TrailingSpaces",
+		"Jade",
+		"LESS"
 	],
 	"indent_guide_options":
 	[
@@ -20,6 +29,5 @@
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": false,
-	"color_pick_upcase": true,
 	"wide_caret": true
 }

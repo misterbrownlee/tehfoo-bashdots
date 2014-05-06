@@ -7,6 +7,7 @@
   ai = !git add -i
   b = branch
   ba = !git branch -a
+  bdr = !git push origin :
   c = commit
   ca = !git commit -a
   cam = !git commit --amend
@@ -31,4 +32,5 @@
   st = status
   unstage = !git reset HEAD
   up = !git fetch origin && git rebase origin/master
+  
 ```

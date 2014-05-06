@@ -1,0 +1,336 @@
+@import "syntax-variables";
+
+.editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+}
+
+.editor .gutter {
+  background-color: @syntax-gutter-background-color;
+  color: @syntax-gutter-text-color;
+}
+
+.editor .gutter .line-number.cursor-line {
+  background-color: @syntax-gutter-background-color-selected;
+  color: @syntax-gutter-text-color-selected;
+}
+
+.editor .gutter .line-number.cursor-line-no-selection {
+  color: @syntax-gutter-text-color-selected;
+}
+
+.editor .wrap-guide {
+  color: @syntax-wrap-guide-color;
+}
+
+.editor .indent-guide {
+  color: @syntax-indent-guide-color;
+}
+
+.editor .invisible-character {
+  color: @syntax-invisible-character-color;
+}
+
+.editor .search-results .marker .region {
+  background-color: transparent;
+  border: @syntax-result-marker-color;
+}
+
+.editor .search-results .marker.current-result .region {
+  border: @syntax-result-marker-color-selected;
+}
+
+.editor.is-focused .cursor {
+  border-color: @syntax-cursor-color;
+}
+
+.editor.is-focused .selection .region {
+  background-color: @syntax-selection-color;
+}
+
+.editor.is-focused .line-number.cursor-line-no-selection, .editor.is-focused .line.cursor-line {
+  background-color: #393939;
+}
+
+.comment {
+  color: #999999;
+}
+
+.invalid {
+  font-weight: bold;
+  color: #FFF9F9;
+  background-color: #FF0000;
+}
+
+.keyword.operator.class, .constant.other, .source.php.embedded.line {
+  color: #CCCCCC;
+}
+
+.support.other.variable, .string.other.link, .entity.name.tag, .meta.tag, .declaration.tag {
+  color: #73A0F5;
+}
+
+.variable {
+  color: #ACFFAE;
+}
+
+.variable.other.property.php {
+  color: #DCF87E;
+}
+
+.keyword.other.create.sql {
+  color: #F2C984;
+}
+
+.storage.type.sql {
+  color: #BFA577;
+}
+
+.storage.modifier.sql {
+  color: #B86741;
+}
+
+.constant.other.database-name.sql {
+  color: #E11717;
+}
+
+.markup.list.numbered.markdown {
+  color: #509BA9;
+}
+
+.markup.list.unnumbered.markdown {
+  color: #7D9BAE;
+}
+
+.markup.bold.markdown {
+  font-weight: bold;
+}
+
+.markup.italic.markdown {
+  font-style: italic;
+}
+
+.punctuation.definition.italic.markdown, .punctuation.definition.bold.markdown {
+  color: #6B72A0;
+}
+
+.punctuation.definition.raw.markdown {
+  color: #FFFFFF;
+}
+
+.markup.raw.inline.markdown, .markup.raw.block.markdown {
+  color: #6B72A0;
+}
+
+.meta.block-level.markdown {
+  color: #6B72A0;
+}
+
+.punctuation.definition.blockquote.markdown {
+  color: #F09D59;
+}
+
+.punctuation.definition.link.markdown {
+  color: #6789E2;
+}
+
+.string.other.link.description.markdown, .string.other.link.title.markdown {
+  color: #BDE77E;
+}
+
+.markup.underline.link.image.markdown, .meta.link.inline.markdown {
+  color: #308F1F;
+}
+
+.string.other.link.description.title.markdown {
+  color: #7AB048;
+}
+
+.constant.other.reference.link.markdown {
+  color: #77884A;
+}
+
+.constant.numeric, .constant.language, .support.constant, .constant.character, .punctuation.section.embedded, .keyword.other.unit {
+  color: #ECAB84;
+}
+
+.punctuation.section.embedded {
+  color: #FF3E3E;
+}
+
+.source.php.embedded.line.html {
+  background-color: #343434;
+}
+
+.string.regexp, .string.regexp.single-quoted.php, .string.regexp.double-quoted.php {
+  color: #8080FF;
+}
+
+.string.regexp.character-class.php {
+  color: #B99DF2;
+}
+
+.string.regexp.arbitrary-repitition.php {
+  color: #5050B8;
+}
+
+.entity.name.class, .entity.name.type.class, .support.type, .support.class, .entity.name {
+  color: #FFCC66;
+}
+
+.string, .constant.other.symbol, .entity.other.inherited-class, .markup.heading {
+  color: #84C2FF;
+}
+
+.keyword.operator, .constant.other.color {
+  color: #FACC7A;
+}
+
+.entity.name.function, .meta.function-call, .support.function, .keyword.other.special-method, .meta.block-level {
+  color: #73A0F5;
+}
+
+.keyword, .storage, .storage.type {
+  color: #F29940;
+}
+
+.invalid {
+  color: #CDCDCD;
+  background-color: #F2777A;
+}
+
+.meta.separator {
+  color: #CDCDCD;
+  background-color: #313131;
+}
+
+.invalid.deprecated {
+  color: #CDCDCD;
+  background-color: #CC99CC;
+}
+
+.markup.inserted.diff, .markup.deleted.diff, .meta.diff.header.to-file, .meta.diff.header.from-file {
+  color: #FFFFFF;
+}
+
+.markup.inserted.diff, .meta.diff.header.to-file {
+  color: #718c00;
+}
+
+.markup.deleted.diff, .meta.diff.header.from-file {
+  color: #c82829;
+}
+
+.meta.diff.header.from-file, .meta.diff.header.to-file {
+  color: #FFFFFF;
+  background-color: #4271ae;
+}
+
+.meta.diff.range {
+  font-style: italic;
+  color: #3e999f;
+}
+
+.invalid.trailing-whitespace {
+  background-color: #F93232;
+}
+
+.source.js {
+  color: #D8EBED;
+}
+
+.punctuation.definition.parameters.begin.js, .punctuation.definition.parameters.end.js, .meta.brace.round.js, .meta.brace.curly.js {
+  color: #C6BEA8;
+}
+
+.meta.delimiter.method.period.js {
+  color: #C6BEA8;
+}
+
+.meta.delimiter.object.comma.js {
+  color: #C6BEA8;
+}
+
+.meta.brace.square.js {
+  color: #C6BEA8;
+}
+
+.variable.language.js, .meta.selector.jquery {
+  color: #D3A469;
+}
+
+.support.function.js.jquery {
+  color: #ACA362;
+}
+
+.meta.tag.sgml {
+  color: #827A96;
+}
+
+.entity.other.attribute-name {
+  color: #BD5759;
+}
+
+.string.quoted.double.html, .string.quoted.single.html {
+  color: #DFCFB7;
+}
+
+.punctuation.definition.string.begin.html, .punctuation.definition.string.end.html {
+  color: #A86C6D;
+}
+
+.entity.name.tag.script.html {
+  font-style: italic;
+  color: #BDF318;
+}
+
+.entity.name.tag.style.html {
+  font-style: italic;
+  color: #CF3060;
+}
+
+.support.constant {
+  font-style: italic;
+  color: #DCE6A4;
+}
+
+.support.type.property-name.css, .meta.property-name.css {
+  color: #FEAE6D;
+}
+
+.support.constant.font-name.css {
+  color: #EE8B7D;
+}
+
+.meta.property-value.css, .constant.numeric.css, .keyword.other.unit.css, .constant.other.color.rgb-value.css {
+  color: #DCE6A4;
+}
+
+.constant.other.color.rgb-value.css {
+  color: #D7CBA8;
+}
+
+.meta.property-value.css {
+  color: #DAD7F4;
+}
+
+.keyword.other.important.css {
+  color: #FFE215;
+}
+
+.entity.name.tag.css {
+  color: #F2777A;
+}
+
+.entity.other.attribute-name.class.css {
+  color: #FF4A4A;
+}
+
+.entity.other.attribute-name.pseudo-class.css, .entity.other.attribute-name.pseudo-element.css, .entity.other.attribute-name.pseudo-class.css {
+  font-style: italic;
+  color: #FF9D9D;
+}
+
+.entity.other.attribute-name.id.css {
+  color: #EA2020;
+}

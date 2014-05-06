@@ -1,4 +1,3 @@
-# get your alias on
 # echo '  loading aliases'
 
 DOTFILES_PATH='~/Documents/code/tools/dotfiles/bash'
@@ -11,15 +10,21 @@ alias test-time='date +%s'
 alias flashlog='tail -f /Users/brownlee/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'
 alias vox='open -a Vox'
 alias tw='open -a TextWrangler'
-alias edit='txt'
+alias edit='subl'
 alias safp='/Users/brownlee/projects/tools/fpdebugger/standaloneplayer.app/Contents/MacOS/fp'
 alias edit-profile='edit /Users/brownlee/Documents/code/tools/dotfiles/bash'
 alias ssh-xddev='ssh -l xddadmin xddev.corp.adobe.com'
 alias logcat='adb logcat'
-alias mnt='adb shell' 
-alias txt='subl'
+alias mnt='adb shell'
+alias atom='open -a Atom'
 alias gcc='xcrun gcc'
 alias passgen='openssl rand -base64 32'
+alias wsvr='python -m SimpleHTTPServer'
+alias wsrv='wsvr'
+alias psrv='wsvr'
+alias dev='grunt dev --connect-port='
+
+
 
 # navigations
 alias cdcode='cd ~/Documents/code'
@@ -64,6 +69,7 @@ alias gst='g st' #status
 alias gac='g ac' #add + commit -m
 alias gplm='g plm' #pull origin master
 alias gpm='g pm' #push origin master
+alias gpo='g p origin' #push origin ... whatevs
 alias gdiff='g diff' #diff --diff-filter=ACMRTUXB
 alias unstage='g unstage'
 alias glog='git log --graph --pretty="format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) %an, %ar%Creset"'

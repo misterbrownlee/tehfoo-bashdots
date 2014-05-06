@@ -1,0 +1,17 @@
+'exception-reporting':
+  'userId': '1e95d897-e186-7992-9361-e3bdb3a5bde2'
+'release-notes':
+  'viewedVersion': '0.92.0'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': '6bf4d226ab468ca3d54219bfa45af02eaf981d99'
+'editor':
+  'fontSize': 16
+'core':
+  'themes': [
+    'atom-dark-ui'
+    'expert-theme'
+  ]
+'git-diff':
+  'showIconsInEditorGutter': true

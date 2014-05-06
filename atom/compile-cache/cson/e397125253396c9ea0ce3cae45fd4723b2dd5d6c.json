@@ -1,0 +1,1 @@
+{".workspace .editor:not(.mini)":{"ctrl-alt-up":"editor:move-line-up","ctrl-alt-down":"editor:move-line-down"},"body":{"cmd-d":"core:delete"},".platform-darwin .editor":{"ctrl-d":"find-and-replace:select-next"}}

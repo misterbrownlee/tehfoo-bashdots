@@ -2,11 +2,15 @@
 # echo '  loading wtf'
 
 # --------------------------------
+# ulimit which node likes to break a lot
+ulimit -S -n 2048
+
+# --------------------------------
 # for git mostly
 export EDITOR="subl -w"
 
 # --------------------------------
-# LSCOLORS 
+# LSCOLORS
 export CLICOLOR=1
 export LSCOLORS=GxeCxxxxxxxx
 
@@ -36,12 +40,12 @@ export HISTCONTROL=erasedups #ignoredups
 
 # --------------------------------
 # Some random colors
-BLUE="\[\033[1;36m\]"; 
-RED="\[\033[0;31m\]"; 
-LIGHT_RED="\[\033[1;31m\]"; 
-GREEN="\[\033[0;32m\]"; 
-WHITE="\[\033[1;37m\]"; 
-LIGHT_GRAY="\[\033[0;37m\]"; 
+BLUE="\[\033[1;36m\]";
+RED="\[\033[0;31m\]";
+LIGHT_RED="\[\033[1;31m\]";
+GREEN="\[\033[0;32m\]";
+WHITE="\[\033[1;37m\]";
+LIGHT_GRAY="\[\033[0;37m\]";
 YELLOW="\[\033[1;33m\]";
 
 
@@ -91,7 +95,7 @@ export JAVA_HOME=`/usr/libexec/java_home`
 
 # This loads RVM into a shell session.
 # for Ruby RVM usage
-#[[ -s "/Users/brownlee/.rvm/scripts/rvm" ]] && source "/Users/brownlee/.rvm/scripts/rvm" 
+#[[ -s "/Users/brownlee/.rvm/scripts/rvm" ]] && source "/Users/brownlee/.rvm/scripts/rvm"
 
 
 # create a file and open it

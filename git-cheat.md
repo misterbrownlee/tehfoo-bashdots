@@ -7,6 +7,7 @@
   ai = !git add -i
   b = branch
   ba = !git branch -a
+  bd =  !git branch -d
   bdr = !git push origin :
   c = commit
   ca = !git commit -a
@@ -20,17 +21,24 @@
   diff = !git diff --diff-filter=ACMRTUXB
   done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1}
   fm = !git fetch origin master
+  nb = !git checkout -b
   nuke = !git clean -xdf
   p = push
   pl = pull
   plm = !git pull origin master
   pm = !git push origin master
+  prune = !git remote prune origin
   r = reset
   rollback =  !rm $1 && git checkout $1
   rsm = !git reset --soft master
   rsom = !git reset --soft master
-  st = status
+  rup =  !git remote update
+  rupru = !git remote update -p
+  st = status --short
+  stl = status
   unstage = !git reset HEAD
-  up = !git fetch origin && git rebase origin/master
+  upbase = !git remote update -p && git rebase origin/master
+  upff = !git remote update -p && git merge --ff-only origin/master
+  up = !git remote update -p && git merge origin/master
   
 ```

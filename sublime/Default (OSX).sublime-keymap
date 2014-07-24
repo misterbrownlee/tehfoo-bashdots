@@ -1,4 +1,7 @@
 [
+  { "keys": ["super+s"], "command": "save_all" },
+  { "keys": ["super+alt+s"], "command": "save" },
+
   { "keys": ["super+d"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
 
   { "keys": ["ctrl+alt+up"], "command": "swap_line_up" },

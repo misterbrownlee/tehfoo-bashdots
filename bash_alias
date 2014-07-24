@@ -4,25 +4,26 @@ DOTFILES_PATH='~/Documents/code/tools/dotfiles/bash'
 
 alias fixbash='edit $DOTFILES_PATH'
 
-alias ll='ls -lah'
-alias epoch='date "+%s"'
-alias test-time='date +%s'
-alias flashlog='tail -f /Users/brownlee/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'
-alias vox='open -a Vox'
-alias tw='open -a TextWrangler'
-alias edit='subl'
-alias safp='/Users/brownlee/projects/tools/fpdebugger/standaloneplayer.app/Contents/MacOS/fp'
+alias atom='open -a Atom'
+alias dev='grunt dev --connect-port='
 alias edit-profile='edit /Users/brownlee/Documents/code/tools/dotfiles/bash'
-alias ssh-xddev='ssh -l xddadmin xddev.corp.adobe.com'
+alias edit='subl'
+alias epoch='date "+%s"'
+alias flashlog='tail -f /Users/brownlee/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'
+alias gcc='xcrun gcc'
+alias ip='ifconfig | grep inet\ '
+alias ll='ls -lah'
 alias logcat='adb logcat'
 alias mnt='adb shell'
-alias atom='open -a Atom'
-alias gcc='xcrun gcc'
 alias passgen='openssl rand -base64 32'
-alias wsvr='python -m SimpleHTTPServer'
-alias wsrv='wsvr'
 alias psrv='wsvr'
-alias dev='grunt dev --connect-port='
+alias safp='/Users/brownlee/projects/tools/fpdebugger/standaloneplayer.app/Contents/MacOS/fp'
+alias ssh-xddev='ssh -l xddadmin xddev.corp.adobe.com'
+alias test-time='date +%s'
+alias tw='open -a TextWrangler'
+alias vox='open -a Vox'
+alias wsrv='wsvr'
+alias wsvr='python -m SimpleHTTPServer'
 
 
 
@@ -59,18 +60,19 @@ alias ninstalld='npm install --save-dev'
 
 #git - extra short alias for .gitconfig aliases :)
 alias g='git'
-alias gco='g co' #checkout
+alias ga='g a' #add
+alias gac='g ac' #add + commit -m
+alias gb='g b' #branch
+alias gba='g ba' #branch -a
 alias gc='g c' #commit
 alias gcm='g cm' #commit -m
-alias gb='g b' #branch
-alias ga='g a' #add
-alias gba='g ba' #branch -a
-alias gst='g st' #status
-alias gac='g ac' #add + commit -m
+alias gco='g co' #checkout
+alias gdiff='g diff' #diff --diff-filter=ACMRTUXB
+alias gnb='g nb'
 alias gplm='g plm' #pull origin master
 alias gpm='g pm' #push origin master
 alias gpo='g p origin' #push origin ... whatevs
-alias gdiff='g diff' #diff --diff-filter=ACMRTUXB
+alias gst='g st' #status
 alias unstage='g unstage'
 alias glog='git log --graph --pretty="format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) %an, %ar%Creset"'
 

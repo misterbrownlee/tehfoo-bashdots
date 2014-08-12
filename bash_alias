@@ -19,6 +19,7 @@ alias passgen='openssl rand -base64 32'
 alias psrv='wsvr'
 alias safp='/Users/brownlee/projects/tools/fpdebugger/standaloneplayer.app/Contents/MacOS/fp'
 alias ssh-xddev='ssh -l xddadmin xddev.corp.adobe.com'
+alias storeBgone='find . -name '*.DS_Store' -type f -delete'
 alias test-time='date +%s'
 alias tw='open -a TextWrangler'
 alias vox='open -a Vox'
@@ -86,6 +87,45 @@ function clone {
 function aclone {
   echo "trying git clone git@git.corp.adobe.com:$1/$2.git"
   git clone git@git.corp.adobe.com:$1/$2.git
+}
+
+# frag a named directory in all directories one level below this
+# mostly used to reclaim disk space from node_modules madness
+function fragFolder {
+
+  # could just try find . -type f -name "*$1*" -exec rm -ri {} \;
+  # but this works and I like the echo messages better
+
+  FRAG_TARGETS=`find . -type d -maxdepth 2 -name *$1*`
+
+  if [ -z "$FRAG_TARGETS" ]
+  then
+    echo "No targets found."
+  fi
+
+  for target in $FRAG_TARGETS; do
+    echo "fragging $1 from $target"
+    rm -rf $target
+  done;
+}
+
+# create a file and open it
+function newfile() {
+  touch $1; edit $1
+}
+
+# create a directory and change to it
+function mkcdir() {
+  mkdir -p "$1"; cd "$1";
+}
+
+# new terminal window at current location
+function nwh() {
+    osascript -e 'on run argv
+        tell app "Terminal"
+            do script "cd " & item 1 of argv
+        end tell
+    end run' `pwd`
 }
 
 # git-cheat burp some of these aliases

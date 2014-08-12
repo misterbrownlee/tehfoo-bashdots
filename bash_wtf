@@ -98,18 +98,3 @@ export JAVA_HOME=`/usr/libexec/java_home`
 #[[ -s "/Users/brownlee/.rvm/scripts/rvm" ]] && source "/Users/brownlee/.rvm/scripts/rvm"
 
 
-# create a file and open it
-function newfile() {
-	touch $1; edit $1
-}
-
-# new terminal window at current location
-function nwh() {
-    osascript -e 'on run argv
-        tell app "Terminal"
-            do script "cd " & item 1 of argv
-        end tell
-    end run' `pwd`
-}
-
-

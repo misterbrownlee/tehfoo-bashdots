@@ -1,17 +1,19 @@
 # echo '  loading aliases'
 
-DOTFILES_PATH='~/Documents/code/tools/dotfiles/bash'
+DOTFILES_PATH='~/bin/dotfiles'
 
 alias fixbash='edit $DOTFILES_PATH'
 
 alias atom='open -a Atom'
 alias dev='grunt dev --connect-port='
-alias edit-profile='edit /Users/brownlee/Documents/code/tools/dotfiles/bash'
+alias edit-profile='edit $DOTFILES_PATH'
 alias edit='subl'
 alias epoch='date "+%s"'
 alias flashlog='tail -f /Users/brownlee/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'
 alias gcc='xcrun gcc'
 alias ip='ifconfig | grep inet\ '
+alias iplan='ifconfig en3 | grep inet\ '
+alias ipwifi='ifconfig en0 | grep inet\ '
 alias ll='ls -lah'
 alias logcat='adb logcat'
 alias mnt='adb shell'
@@ -93,7 +95,7 @@ function aclone {
 # mostly used to reclaim disk space from node_modules madness
 function fragFolder {
 
-  # could just try find . -type f -name "*$1*" -exec rm -ri {} \;
+  # could just try find . -type d -maxdepth 2 -name "*$1*" -exec rm -ri {} \;
   # but this works and I like the echo messages better
 
   FRAG_TARGETS=`find . -type d -maxdepth 2 -name *$1*`
@@ -126,6 +128,11 @@ function nwh() {
             do script "cd " & item 1 of argv
         end tell
     end run' `pwd`
+}
+
+# clone a coralui component repo, because I hate redundant typing
+function coral-clone() {
+  git clone $ADOBE_GITHUB:Coral/coralui-component-$1
 }
 
 # git-cheat burp some of these aliases

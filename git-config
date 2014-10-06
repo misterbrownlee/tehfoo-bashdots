@@ -51,3 +51,4 @@
 [core]
 	quotepath = false
 	autocrlf = input
+	excludesfile = /Users/brownlee/.gitignore_global

@@ -132,6 +132,7 @@ function nwh() {
 
 # clone a coralui component repo, because I hate redundant typing
 function coral-clone() {
+  echo "trying git clone $ADOBE_GITHUB:Coral/coralui-component-$1"
   git clone $ADOBE_GITHUB:Coral/coralui-component-$1
 }
 

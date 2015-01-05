@@ -5,21 +5,27 @@ DOTFILES_PATH='~/bin/dotfiles'
 alias fixbash='edit $DOTFILES_PATH'
 
 alias atom='open -a Atom'
+alias brak='open -a Brackets'
 alias dev='grunt dev --connect-port='
 alias docs='grunt docs'
-alias edit-profile='edit $DOTFILES_PATH'
+alias edit-profile='fixbash'
 alias edit='subl'
+# alias edit='brak'
 alias epoch='date "+%s"'
 alias fetch='git fetch'
 alias flashlog='tail -f /Users/brownlee/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'
 alias gcc='xcrun gcc'
 alias gdd='grunt default dev'
+alias gd='grunt default'
+alias gr='grunt'
+alias gt='grunt run-tests'
 alias ip='ifconfig | grep inet\ '
 alias iplan='ifconfig en3 | grep inet\ '
 alias ipwifi='ifconfig en0 | grep inet\ '
 alias ll='ls -lah'
 alias logcat='adb logcat'
 alias mnt='adb shell'
+alias ni='npm i'
 alias passgen='openssl rand -base64 32'
 alias prune='git prune'
 alias psrv='wsvr'
@@ -32,7 +38,6 @@ alias tw='open -a TextWrangler'
 alias vox='open -a Vox'
 alias wsrv='wsvr'
 alias wsvr='python -m SimpleHTTPServer'
-
 
 
 # navigations
@@ -111,7 +116,7 @@ function fragFolder {
   fi
 
   for target in $FRAG_TARGETS; do
-    echo "fragging $1 from $target"
+    echo "fragging $target"
     rm -rf $target
   done;
 }
@@ -135,6 +140,17 @@ function nwh() {
     end run' `pwd`
 }
 
+function togglePhantom() {
+  if [ -z "$JENKINS_URL" ]
+  then
+    echo "setting JENKINS_URL=1"
+    export JENKINS_URL=1
+  else
+    echo "unset JENKINS_URL"
+    unset JENKINS_URL
+  fi
+}
+
 # clone a coralui component repo, because I hate redundant typing
 function coral-clone() {
   echo "trying git clone $ADOBE_GITHUB:Coral/coralui-component-$1"
@@ -149,5 +165,3 @@ alias git-cheat="open -a /Applications/Google\ Chrome.app $DOTFILES_PATH/git-che
 # markdown-cheat remind me I haz stupid
 # so I can actually use them
 alias markdown-cheat="open -a /Applications/Google\ Chrome.app $DOTFILES_PATH/markdown-cheat.md"
-
-

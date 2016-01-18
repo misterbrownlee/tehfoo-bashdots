@@ -32,17 +32,10 @@ YELLOW="\[\033[1;33m\]";
 # --------------------------------
 # Add git related details to prompt if available
 # some set up around status coloring
-# source ~/bin/dotfiles/git-completion.bash
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
-
-# if [ -f `brew --prefix git`/share/git-core/contrib/completion/git-prompt.sh ]; then
-#   . `brew --prefix git`/share/git-core/contrib/completion/git-prompt.sh
-# fi
-
-# source ~/bin/dotfiles/git-prompt.sh
 
 ## add completetion for aliases
 __git_complete g __git_main
@@ -53,28 +46,10 @@ GIT_PS1_SHOWCOLORHINTS='yut'
 GIT_PS1_SHOWUNTRACKEDFILES='kthx';
 GIT_PS1_SHOWDIRTYSTATE='srsly'
 
-# old git function parse_git_branch {
-#   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/{\1}/'
-# }
-
-# prompt choices... because it matters
-# PS1='[\u :\W$(parse_git_branch)]$'
-# PS1="$YELLOW\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY $ "
-# PS1="$BLUE\h-\u: \W $YELLOW\$(parse_git_branch)$WHITE$"
-# PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-# PS1="$BLUE\h-\u: \W $YELLOW\$(__git_ps1)$WHITE$"
-# export PS1
-
-# new hotness
-# PROMPT_COMMAND="__git_ps1 '$BLUE\h-\u:\W$WHITE' '\\$ '"
-# PROMPT_COMMAND="__git_ps1 '$BLUE\u@\h$YELLOW: \W $WHITE' '\\$'"
+# new prompt hotness
 PROMPT_COMMAND="__git_ps1 '$BLUE\u@\h$YELLOW: \W $WHITE' ' \n➥ '"
 
-# Java... glad that's over with
-export JAVA_HOME=`/usr/libexec/java_home`
-
-# This loads RVM into a shell session.
-# for Ruby RVM usage
-#[[ -s "/Users/brownlee/.rvm/scripts/rvm" ]] && source "/Users/brownlee/.rvm/scripts/rvm"
+# get nvm working
+source $(brew --prefix nvm)/nvm.sh
 
 

@@ -6,10 +6,11 @@ Also, markdown cheat sheets, including a markdown cheat sheet for markdown!
 
 Helpful things for setting up a new machine:
 ```
-git clone git@github.com:tehfoo/bashdots.git
-cd bashdots
+cd
+git clone git@github.com:misterbrownlee/tehfoo-bashdots.git .configs
+cd .configs
 $DOTFILES_CLONE=`cwd`
-cd ~
+cd ..
 ln -s $DOTFILES_CLONE/git-config .gitconfig
 ln -s $DOTFILES_CLONE/gitignore_global .gitignore_global
 
@@ -22,5 +23,9 @@ then
    source ~/.bashrc
 fi
 ```
+
+It's a bitch to symlink the Submlime text stuff, but here ya go:
+```
+
 
 Yay 4 magic.

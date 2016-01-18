@@ -19,26 +19,6 @@ export LSCOLORS=GxeCxxxxxxxx
 export HISTCONTROL=erasedups #ignoredups
 
 # --------------------------------
-# good old ant...
-#export ANT_OPTS="-Xms512m -Xmx512m -Dfile.encoding=UTF-8 -XX:MaxPermSize=512m"
-
-# --------------------------------
-# someday Perforce will die
-#export P4USER=brownlee
-#export P4PORT=theoden.corp.adobe.com:1760
-#export P4PORT=yorktown.corp.adobe.com:1770
-#export P4PORT=alaska.corp.adobe.com:1700
-
-# --------------------------------
-# totally *hates*
-# but the OSGi goons are all about it
-#export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=1024m"
-#export M2_ROOT="/usr/local/maven/current"
-#export M2_REPO="~/.m2/"
-#export M2="$M2_ROOT/bin"
-
-
-# --------------------------------
 # Some random colors
 BLUE="\[\033[1;36m\]";
 RED="\[\033[0;31m\]";

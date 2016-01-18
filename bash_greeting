@@ -14,15 +14,17 @@ else # it is good evening till midnight
   greet="good evening, $USER"
 fi
 
-COWS=(/usr/local/Cellar/cowsay/3.03/share/cows/*)
-MAX_COW=`ls /usr/local/Cellar/cowsay/3.03/share/cows | wc -l`
-COW_NUM=$RANDOM;
-COW_NUM=$[ $COW_NUM % $MAX_COW ]
+# COWS=(/usr/local/Cellar/cowsay/3.03/share/cows/*)
+# MAX_COW=`ls /usr/local/Cellar/cowsay/3.03/share/cows | wc -l`
+# COW_NUM=$RANDOM;
+# COW_NUM=$[ $COW_NUM % $MAX_COW ]
  
 # display greet
 echo -e "\033[0;32m"
-# echo ---------------------------------------------------------------
+echo ---------------------------------------------------------------
 # echo -e "\n\n\n"
-cowsay -f "${COWS[COW_NUM]}" $greet
+# cowsay -f "${COWS[COW_NUM]}" $greet
 # fortune | cowsay | toilet --gay -f term
+echo "$greet"
+echo "You made it!"
 echo ---------------------------------------------------------------

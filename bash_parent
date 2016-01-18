@@ -1,5 +1,5 @@
 # echo 'hi ... bash parent will load dotfiles:'
-. ~/bin/dotfiles/bash_alias
-. ~/bin/dotfiles/bash_path
-. ~/bin/dotfiles/bash_wtf
-. ~/bin/dotfiles/bash_greeting
+. ~/.configs/bash_alias
+. ~/.configs/bash_path
+. ~/.configs/bash_wtf
+. ~/.configs/bash_greeting

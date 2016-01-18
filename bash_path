@@ -4,23 +4,25 @@
 GIT_PATH="/usr/local/bin/git"
 
 # ruby
-RUBY_PATH="/usr/local/Cellar/ruby/latest/bin"
+# RUBY_PATH="/usr/local/Cellar/ruby/latest/bin"
 
 # actionscript 
-export FLEX_HOME=~/projects/tools/sdks/latest
+# export FLEX_HOME=~/projects/tools/sdks/latest
 
 #android sdk
-ANDROID_SDK="~/projects/tools/sdks/android_latest"
-ANDROID_PATHS="$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools"
+# ANDROID_SDK="~/projects/tools/sdks/android_latest"
+# ANDROID_PATHS="$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools"
 
 # npm global
 NPM_GLOBAL=/usr/local/share/npm/bin
 
 # hates RVM
-RVM=$HOME/.rvm/bin 
+# RVM=$HOME/.rvm/bin 
 
 # some wtf things
-WORK_EXTRAS="~/projects/tools/bin"
+# WORK_EXTRAS="~/projects/tools/bin"
 
 # export thems
-export PATH=$PATH:~/bin:$FLEX_HOME/bin:$ANDROID_PATHS:$GIT_PATH/bin:$WORK_EXTRAS:$RUBY_PATH:$NPM_GLOBAL:$RVM
+# export PATH=$PATH:~/bin:$FLEX_HOME/bin:$ANDROID_PATHS:$GIT_PATH/bin:$WORK_EXTRAS:$RUBY_PATH:$NPM_GLOBAL:$RVM
+
+export PATH=$PATH:~/bin:$GIT_PATH/bin:$WORK_EXTRAS:$NPM_GLOBAL

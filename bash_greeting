@@ -23,6 +23,7 @@ fi
 echo -e "\033[0;32m"
 echo ---------------------------------------------------------------
 # echo -e "\n\n\n"
+
 # cowsay -f "${COWS[COW_NUM]}" $greet
 # fortune | cowsay | toilet --gay -f term
 echo "$greet"

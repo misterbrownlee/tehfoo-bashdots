@@ -3,6 +3,10 @@
 # git
 GIT_PATH="/usr/local/bin/git"
 
+# random sounds
+SOUNDS_PATH=/System/Library/Sounds
+MORE_SOUNDS_PATH=/System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Resources/Sounds/
+
 # ruby
 # RUBY_PATH="/usr/local/Cellar/ruby/latest/bin"
 
@@ -26,3 +30,4 @@ NPM_GLOBAL=/usr/local/share/npm/bin
 # export PATH=$PATH:~/bin:$FLEX_HOME/bin:$ANDROID_PATHS:$GIT_PATH/bin:$WORK_EXTRAS:$RUBY_PATH:$NPM_GLOBAL:$RVM
 
 export PATH=$PATH:~/bin:$GIT_PATH/bin:$WORK_EXTRAS:$NPM_GLOBAL
+

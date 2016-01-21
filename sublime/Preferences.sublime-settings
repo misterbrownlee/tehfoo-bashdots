@@ -1,4 +1,25 @@
 {
+	"added_words":
+	[
+		"coralui",
+		"git#master",
+		"git+ssh",
+		"git@git",
+		"mixin",
+		"textfield",
+		"tooltip",
+		"textarea",
+		"tabpanel",
+		"visibilitytoggle",
+		"fieldcomponent",
+		"jsdoc",
+		"anchorbutton",
+		"autocomplete",
+		"js",
+		"solutionswitcher",
+		"orgswitcher",
+		"menubar"
+	],
 	"auto_complete_commit_on_tab": true,
 	"binary_file_patterns":
 	[
@@ -39,6 +60,10 @@
 	"ignored_packages":
 	[
 		"Vintage"
+	],
+	"ignored_words":
+	[
+		"valuetext"
 	],
 	"indent_guide_options":
 	[

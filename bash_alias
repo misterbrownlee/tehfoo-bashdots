@@ -1,6 +1,6 @@
 # echo '  loading aliases'
 
-DOTFILES_PATH='~/bin/dotfiles'
+DOTFILES_PATH='~/.configs'
 
 alias fixbash='edit $DOTFILES_PATH'
 

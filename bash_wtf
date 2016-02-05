@@ -50,6 +50,8 @@ GIT_PS1_SHOWDIRTYSTATE='srsly'
 PROMPT_COMMAND="__git_ps1 '$BLUE\u@\h$YELLOW: \W $WHITE' ' \n➥ '"
 
 # get nvm working
-source $(brew --prefix nvm)/nvm.sh
+# source $(brew --prefix nvm)/nvm.sh
+
+
 
 

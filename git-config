@@ -29,6 +29,7 @@
   diff = !git diff --diff-filter=ACMRTUXB
   done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1}
   fm = !git fetch origin master
+  master = !git co master
   nb = !git checkout -b
   nuke = !git clean -xdf
   p = push
@@ -44,10 +45,13 @@
   rupru = !git remote update -p
   st = status --short
   stl = status
+  t = tag
+  undo =checkout --
   unstage = !git reset HEAD
   upbase = !git remote update -p && git rebase origin/master
 	upff = !git remote update -p && git merge --ff-only origin/master
-  up = !git remote update -p && git merge origin/master
+  up = !git fetch && git co master && git merge origin/master && git remote prune origin
+  wayback = !git undo .
 [core]
 	quotepath = false
 	autocrlf = input

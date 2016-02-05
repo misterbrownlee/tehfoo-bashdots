@@ -28,13 +28,17 @@ alias iplan='ifconfig en3 | grep inet\ '
 alias ipwifi='ifconfig en0 | grep inet\ '
 alias ll='ls -lah'
 alias logcat='adb logcat'
+alias master='g master'
 alias mnt='adb shell'
+alias minty='nn; echo "fetching from git and merging master"; git up; ni; grunt'
+alias nn='echo "removing node_modules..." && rm -rf node_modules'
 #alias ni='npm i'
 alias now='date +"%m-%d-%Y %T"'
 alias passgen='openssl rand -base64 32'
 alias prune='git prune'
 alias psrv='wsvr'
-alias minty='echo "removing node_modules" && rm -r node_modules && git up && ni && grunt'
+alias rlbash='. ~/.bashrc'
+alias reload-bash=rlbash
 alias safp='/Users/brownlee/projects/tools/fpdebugger/standaloneplayer.app/Contents/MacOS/fp'
 alias sauce='sc -u brownlee -k $SAUCE_ACCESS_KEY'
 alias ssh-xddev='ssh -l xddadmin xddev.corp.adobe.com'
@@ -46,7 +50,7 @@ alias vox='open -a Vox'
 alias wsrv='wsvr'
 alias wsvr='python -m SimpleHTTPServer'
 
-alias ni="echo 'installing via npm...'; npm install; osascript -e 'display notification \"BOOM! installed!\"'";
+alias ni="echo 'installing via npm...'; npm install; say "BOOM"; osascript -e 'display notification \"BOOM! installed!\"'"; 
 
 # navigations
 alias cdcode='cd ~/Documents/code'
@@ -55,12 +59,16 @@ alias cdxd='cd ~/Documents/code/xd'
 alias cdfoo='cd ~/Documents/code/tehfoo'
 alias cdcoralui='cd ~/Documents/code/xd/coralui/packages/components'
 
+#noises
+alias ding='afplay $SOUNDS_PATH/Ping.aiff'
+
 # softwares
 alias chrome='open -a /Applications/Google\ Chrome.app'
 alias opendb='open -a  /Applications/Utilities/SQLite\ Database\ Browser\ 2.0\ b1.app/'
 
 # lol kristoferjoseph
 alias bitch='sudo'
+alias make-me-a-sandwich='echo "make it yourself, $USER..."'
 
 # command functions
 function mkcdir() {
@@ -83,20 +91,21 @@ alias ninstalld='npm install --save-dev'
 #git - extra short alias for .gitconfig aliases :)
 alias g='git'
 alias ga='g a' #add
-alias gac='g ac' #add + commit -m
-alias gb='g b' #branch
-alias gba='g ba' #branch -a
-alias gc='g c' #commit
+#alias gac='g ac' #add + commit -m
+#alias gb='g b' #branch
+#alias gba='g ba' #branch -a
+#alias gc='g c' #commit
 alias gcm='g cm' #commit -m
-alias gco='g co' #checkout
+#alias gco='g co' #checkout
 alias gdiff='g diff' #diff --diff-filter=ACMRTUXB
-alias gnb='g nb'
-alias gplm='g plm' #pull origin master
-alias gpm='g pm' #push origin master
-alias gpo='g p origin' #push origin ... whatevs
+#alias gnb='g nb'
+#alias gplm='g plm' #pull origin master
+#alias gpm='g pm' #push origin master
+#alias gpo='g p origin' #push origin ... whatevs
 alias gst='g st' #status
 alias unstage='g unstage'
 alias nuke='git nuke'
+alias nuke-node='fragFolder node_modules'
 alias glog='git log --graph --pretty="format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) %an, %ar%Creset"'
 
 # clone a repo from github; args are [orgname] [repo]
@@ -164,9 +173,9 @@ function togglePhantom() {
 function tagpre() {   
   VERSION=$1   
   git tag -d pre   
-  git push origin :refs/tags/pre || { exit 1; }   
-  git tag -a pre $VERSION -m "@releng - pre tag based on $VERSION" || { exit 1; }   
-  git push origin pre || { exit 1; } 
+  git push origin :refs/tags/pre || { return; }   
+  git tag -a pre $VERSION -m "@releng - pre tag based on $VERSION" || { return; }   
+  git push origin pre || { return; } 
 }
 
 function releasepre() {
@@ -174,22 +183,40 @@ function releasepre() {
   # todo: warn if modules linked
   # todo: npm install latest
   git tag -d pre
-  git checkout master || { exit 1; }
-  git pull origin master || { exit 1; }
-  git checkout prerelease || { exit 1; }
-  git pull origin prerelease || { exit 1; }
-  git merge master -m '@releng - merge master into prerelease' || { exit 1; }
-  npm i || { exit 1; }
-  grunt release || { exit 1; } # todo: pass version here
-  tagpre $VERSION || { exit 1; }
+  git checkout master || { return; }
+  git pull origin master || { return; }
+  git checkout prerelease || { return; }
+  git pull origin prerelease || { return; }
+  git merge master -m '@releng - merge master into prerelease' || { return; }
+  npm i || { return; }
+  grunt release || { return; } # todo: pass version here
+  tagpre $VERSION || { return; }
   git checkout master
+}
+
+function rmtag() {
+  git tag -d $1
+  git push origin :refs/tags/$1
+}
+
+function mintyr() {
+  say -v Zarvox "begin"
+  if [[ -d node_modules ]]; then
+    nn
+  else
+    say "no nuke for you"
+  fi
+  git up || { return; }
+  ni || { return; }
+  grunt || { return; }
+  say -v "Pipe Organ" 'minty'
 }
 
 
 # clone a coralui component repo, because I hate redundant typing
 function coral-clone() {
   echo "trying git clone $ADOBE_GITHUB:Coral/coralui-component-$1"
-  git clone $ADOBE_GITHUB:Coral/coralui-component-$1
+  git clone $ADOBE_GITHUB:Coral/coralui-component-$1 $1
 }
 
 # git-cheat burp some of these aliases

@@ -1,5 +1,7 @@
-# echo 'hi ... bash parent will load dotfiles:'
-. ~/.configs/bash_alias
-. ~/.configs/bash_path
-. ~/.configs/bash_wtf
-. ~/.configs/bash_greeting
+echo 'hi ... bash parent will load dotfiles:'
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "loading path is $DIR"
+. $DIR/bash_alias
+. $DIR/bash_path
+. $DIR/bash_wtf
+. $DIR/bash_greeting

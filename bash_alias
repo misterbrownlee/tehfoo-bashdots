@@ -1,6 +1,5 @@
-# echo '  loading aliases'
-
-DOTFILES_PATH='~/.configs'
+DOTFILES_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "  loading aliases..."
 
 alias fixbash='edit $DOTFILES_PATH'
 
@@ -91,27 +90,34 @@ alias ninstalld='npm install --save-dev'
 #git - extra short alias for .gitconfig aliases :)
 alias g='git'
 alias ga='g a' #add
+alias gclone='clone'
+alias gcm='g cm' #commit -m
+alias gdiff='g diff' #diff --diff-filter=ACMRTUXB
+alias glog='git log --graph --pretty="format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) %an, %ar%Creset"'
+alias gst='g st' #status
+alias nuke-node='fragFolder node_modules'
+alias nuke='git nuke'
+alias unstage='g unstage'
+
 #alias gac='g ac' #add + commit -m
 #alias gb='g b' #branch
 #alias gba='g ba' #branch -a
 #alias gc='g c' #commit
-alias gcm='g cm' #commit -m
 #alias gco='g co' #checkout
-alias gdiff='g diff' #diff --diff-filter=ACMRTUXB
 #alias gnb='g nb'
 #alias gplm='g plm' #pull origin master
 #alias gpm='g pm' #push origin master
 #alias gpo='g p origin' #push origin ... whatevs
-alias gst='g st' #status
-alias unstage='g unstage'
-alias nuke='git nuke'
-alias nuke-node='fragFolder node_modules'
-alias glog='git log --graph --pretty="format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) %an, %ar%Creset"'
 
 # clone a repo from github; args are [orgname] [repo]
 function clone {
   echo "trying git clone git@github.com:$1/$2.git"
   git clone git@github.com:$1/$2.git
+}
+
+function meclone {
+  echo "trying git clone git@github.com:misterbrownlee/$1.git"
+  git clone git@github.com:misterbrownlee/$1.git
 }
 
 # clone a repo from git.corp.adobe.com; args are [orgname] [repo]

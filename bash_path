@@ -1,4 +1,4 @@
-# echo '  loading paths'
+echo '  loading paths'
 
 # git
 GIT_PATH="/usr/local/bin/git"
@@ -10,7 +10,7 @@ MORE_SOUNDS_PATH=/System/Library/PrivateFrameworks/ScreenReader.framework/Versio
 # ruby
 # RUBY_PATH="/usr/local/Cellar/ruby/latest/bin"
 
-# actionscript 
+# actionscript
 # export FLEX_HOME=~/projects/tools/sdks/latest
 
 #android sdk
@@ -21,7 +21,7 @@ MORE_SOUNDS_PATH=/System/Library/PrivateFrameworks/ScreenReader.framework/Versio
 NPM_GLOBAL=/usr/local/share/npm/bin
 
 # hates RVM
-# RVM=$HOME/.rvm/bin 
+# RVM=$HOME/.rvm/bin
 
 # some wtf things
 # WORK_EXTRAS="~/projects/tools/bin"

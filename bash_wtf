@@ -1,5 +1,5 @@
 # the things that aren't teh others
-# echo '  loading wtf'
+echo '  loading wtf'
 
 # --------------------------------
 # ulimit which node likes to break a lot

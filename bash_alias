@@ -15,6 +15,7 @@ alias fetch='git fetch'
 #alias flashlog='tail -f /Users/brownlee/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'
 alias gcc='xcrun gcc'
 alias gdd='grunt default dev'
+alias gddd='grunt default dev-dist'
 alias gd='grunt default'
 alias gr='grunt'
 alias gt='grunt run-tests'
@@ -29,7 +30,7 @@ alias ll='ls -lah'
 alias logcat='adb logcat'
 alias master='g master'
 alias mnt='adb shell'
-alias minty='nn; echo "fetching from git and merging master"; git up; ni; grunt'
+alias minty_lite='nn; echo "fetching from git and merging master"; git up; ni; grunt'
 alias nn='echo "removing node_modules..." && rm -rf node_modules'
 #alias ni='npm i'
 alias now='date +"%m-%d-%Y %T"'
@@ -49,7 +50,7 @@ alias vox='open -a Vox'
 alias wsrv='wsvr'
 alias wsvr='python -m SimpleHTTPServer'
 
-alias ni="echo 'installing via npm...'; npm install; say "BOOM"; osascript -e 'display notification \"BOOM! installed!\"'"; 
+alias ni="echo 'installing via npm...'; npm install; say "BOOM"; osascript -e 'display notification \"BOOM! installed!\"'";
 
 # navigations
 alias cdcode='cd ~/Documents/code'
@@ -176,12 +177,22 @@ function togglePhantom() {
   fi
 }
 
-function tagpre() {   
-  VERSION=$1   
-  git tag -d pre   
-  git push origin :refs/tags/pre || { return; }   
-  git tag -a pre $VERSION -m "@releng - pre tag based on $VERSION" || { return; }   
-  git push origin pre || { return; } 
+
+function tagfloat() {
+  VERSION=$1
+  FLOATING_TAG=$2
+  git tag -d $FLOATING_TAG
+  git push origin :refs/tags/$FLOATING_TAG || { return; }
+  git tag -a $FLOATING_TAG $VERSION -m "@releng - $FLOATING_TAG floating tag based on $VERSION" || { return; }
+  git push origin $FLOATING_TAG || { return; }
+}
+
+function tagpre() {
+  VERSION=$1
+  git tag -d pre
+  git push origin :refs/tags/pre || { return; }
+  git tag -a pre $VERSION -m "@releng - pre tag based on $VERSION" || { return; }
+  git push origin pre || { return; }
 }
 
 function releasepre() {
@@ -205,7 +216,7 @@ function rmtag() {
   git push origin :refs/tags/$1
 }
 
-function mintyr() {
+function minty() {
   say -v Zarvox "begin"
   if [[ -d node_modules ]]; then
     nn
@@ -215,7 +226,6 @@ function mintyr() {
   git up || { return; }
   ni || { return; }
   grunt || { return; }
-  say -v "Pipe Organ" 'minty'
 }
 
 

@@ -55,7 +55,7 @@
 		"tmp",
 		"temp"
 	],
-	"font_size": 15,
+	"font_size": 13,
 	"highlight_line": true,
 	"ignored_packages":
 	[
@@ -63,6 +63,7 @@
 	],
 	"ignored_words":
 	[
+		"artifactory",
 		"valuetext"
 	],
 	"indent_guide_options":

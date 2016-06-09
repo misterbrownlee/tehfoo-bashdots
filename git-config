@@ -17,10 +17,11 @@
   ba = !git branch -a
   bd =  !git branch -d
   bdr = !git push origin :
+  branchnuke = !git remote prune origin && git branch --merged | grep -v "master" | xargs git branch -D
   c = commit
   ca = !git commit -a
   cam = !git commit --amend
-  cleanup = !git remote prune origin && git gc && git clean -xdf
+  cleanup = !git bnuke && git gc && git clean -xdf
   cm = !git commit -m
   co = checkout
   cob = !git checkout -b
@@ -48,9 +49,9 @@
   t = tag
   undo =checkout --
   unstage = !git reset HEAD
-  upbase = !git remote update -p && git rebase origin/master
-	upff = !git remote update -p && git merge --ff-only origin/master
   up = !git fetch && git co master && git merge origin/master && git remote prune origin
+  upbase = !git remote update -p && git rebase origin/master
+  upff = !git remote update -p && git merge --ff-only origin/master
   wayback = !git undo .
 [core]
 	quotepath = false

@@ -1,245 +1,149 @@
 DOTFILES_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "  loading aliases..."
 
-alias fixbash='edit $DOTFILES_PATH'
-
-alias atom='open -a Atom'
-alias brak='open -a Brackets'
-alias dev='grunt dev --connect-port='
-alias docs='grunt docs'
-alias edit-profile='fixbash'
-alias edit='subl'
-# alias edit='brak'
+# -------------------------
+# general stuff
+# -------------------------
+#
 alias epoch='date "+%s"'
-alias fetch='git fetch'
-#alias flashlog='tail -f /Users/brownlee/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'
-alias gcc='xcrun gcc'
-alias gdd='grunt default dev'
-alias gddd='grunt default dev-dist'
-alias gd='grunt default'
-alias gr='grunt'
-alias gt='grunt run-tests'
-alias here='edit .'
-alias i='npm i'
-alias isd='npm i --save-dev'
-alias is='npm i --save'
+alias ff='findfile'
+alias findfile='find . -name'
+alias fixbash='edit $DOTFILES_PATH'
 alias ip='ifconfig | grep inet\ '
 alias iplan='ifconfig en3 | grep inet\ '
 alias ipwifi='ifconfig en0 | grep inet\ '
 alias ll='ls -lah'
 alias logcat='adb logcat'
-alias master='g master'
 alias mnt='adb shell'
-alias minty_lite='nn; echo "fetching from git and merging master"; git up; ni; grunt'
-alias nn='echo "removing node_modules..." && rm -rf node_modules'
-#alias ni='npm i'
 alias now='date +"%m-%d-%Y %T"'
 alias passgen='openssl rand -base64 32'
-alias prune='git prune'
 alias psrv='wsvr'
+alias reload-bash='rlbash'
 alias rlbash='. ~/.bashrc'
-alias reload-bash=rlbash
+alias rlb='rlbash'
 alias safp='/Users/brownlee/projects/tools/fpdebugger/standaloneplayer.app/Contents/MacOS/fp'
 alias sauce='sc -u brownlee -k $SAUCE_ACCESS_KEY'
-alias ssh-xddev='ssh -l xddadmin xddev.corp.adobe.com'
 alias storeBgone='find . -name '*.DS_Store' -type f -delete'
 alias test-time='date +%s'
-alias this='here --background'
-alias tw='open -a TextWrangler'
-alias vox='open -a Vox'
 alias wsrv='wsvr'
 alias wsvr='python -m SimpleHTTPServer'
 
-alias ni="echo 'installing via npm...'; npm install; say "BOOM"; osascript -e 'display notification \"BOOM! installed!\"'";
 
+# -------------------------
 # navigations
+# -------------------------
+#
 alias cdcode='cd ~/Documents/code'
 alias cdtools='cd ~/Documents/code/tools'
 alias cdxd='cd ~/Documents/code/xd'
 alias cdfoo='cd ~/Documents/code/tehfoo'
-alias cdcoralui='cd ~/Documents/code/xd/coralui/packages/components'
+alias cdcoralui='cd ~/Documents/code/xd/coralui/'
+alias cdcomponents='cd ~/Documents/code/xd/coralui/packages/components'
 
-#noises
-alias ding='afplay $SOUNDS_PATH/Ping.aiff'
+alias cdocs='cdxd; cd docs-for-coralui'
+alias components='cdcomponents'
+alias cmpt='cdcomponents'
+alias coralui='cdcoralui'
+alias coral='cdcoralui'
+alias cui='cdcoralui'
+alias xd='cdxd'
 
+
+# -------------------------
+# building things
+# -------------------------
+#
+alias dev='grunt dev --connect-port='
+alias gcc='xcrun gcc'
+alias bdd='grunt default dev --devOnly'
+alias bddd='grunt default dev-dist'
+alias bd3='bddd'
+alias bd='grunt default'
+alias b='grunt'
+alias bt='grunt run-tests'
+alias bdebug='node-debug /usr/local/lib/node_modules/grunt-cli/bin/grunt'
+
+
+# -------------------------
+# editor foo
+# -------------------------
+#
+alias atom='open -a Atom'
+alias brak='open -a Brackets'
+alias edit-profile='fixbash'
+alias edit='subl'
+alias here='edit .'
+alias this='here --background'
+
+# -------------------------
 # softwares
+# -------------------------
+#
 alias chrome='open -a /Applications/Google\ Chrome.app'
 alias opendb='open -a  /Applications/Utilities/SQLite\ Database\ Browser\ 2.0\ b1.app/'
+alias vox='open -a Vox'
 
-# lol kristoferjoseph
-alias bitch='sudo'
-alias make-me-a-sandwich='echo "make it yourself, $USER..."'
-
-# command functions
-function mkcdir() {
-    mkdir $1; cd $1
-}
-
+# -------------------------
 # mongo
-alias upmongo='launchctl load /usr/local/opt/mongodb/homebrew.mxcl.mongodb.plist'
-alias downmongo='launchctl unload /usr/local/opt/mongodb/homebrew.mxcl.mongodb.plist'
+# -------------------------
+#
+# alias upmongo='launchctl load /usr/local/opt/mongodb/homebrew.mxcl.mongodb.plist'
+# alias downmongo='launchctl unload /usr/local/opt/mongodb/homebrew.mxcl.mongodb.plist'
 
-#nodefront
-#alias nff='nodefront fetch'
-#alias nfi='nodefront insert'
-#alias nfl='nodefront compile -l'
-#alias nfm='nodefront minify'
 
-#npm
+# -------------------------
+# npm
+# -------------------------
+#
+alias i='npm i'
+alias is='npm i --save'
+alias isd='npm i --save-dev'
+alias minty_lite='nn; echo "fetching from git and merging master"; git up; ni; grunt'
+alias ni="echo 'installing via npm...'; npm install; say "BOOM"; osascript -e 'display notification \"BOOM! installed!\"'";
 alias ninstalld='npm install --save-dev'
+alias nisd='npm install --save-dev'
+alias nn='echo "removing node_modules..." && rm -rf node_modules'
+alias nuke-node-modules='fragFolder node_modules'
 
-#git - extra short alias for .gitconfig aliases :)
+
+# -------------------------
+# git - aliases for .gitconfig aliases because typing
+# -------------------------
+#
 alias g='git'
-alias ga='g a' #add
+alias ga='g a'
 alias gclone='clone'
-alias gcm='g cm' #commit -m
-alias gdiff='g diff' #diff --diff-filter=ACMRTUXB
+alias gcm='g cm'
+alias gdiff='g diff'
 alias glog='git log --graph --pretty="format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) %an, %ar%Creset"'
-alias gst='g st' #status
-alias nuke-node='fragFolder node_modules'
+alias gpo='g p origin'
+alias gst='g st'
+
+alias fetch='git fetch'
+alias master='g master'
 alias nuke='git nuke'
+alias prune='git prune'
 alias unstage='g unstage'
 
-#alias gac='g ac' #add + commit -m
-#alias gb='g b' #branch
-#alias gba='g ba' #branch -a
-#alias gc='g c' #commit
-#alias gco='g co' #checkout
+#alias gac='g ac'
+#alias gb='g b'
+#alias gba='g ba'
+#alias gc='g c'
+#alias gco='g co'
 #alias gnb='g nb'
-#alias gplm='g plm' #pull origin master
-#alias gpm='g pm' #push origin master
-#alias gpo='g p origin' #push origin ... whatevs
-
-# clone a repo from github; args are [orgname] [repo]
-function clone {
-  echo "trying git clone git@github.com:$1/$2.git"
-  git clone git@github.com:$1/$2.git
-}
-
-function meclone {
-  echo "trying git clone git@github.com:misterbrownlee/$1.git"
-  git clone git@github.com:misterbrownlee/$1.git
-}
-
-# clone a repo from git.corp.adobe.com; args are [orgname] [repo]
-function aclone {
-  echo "trying git clone git@git.corp.adobe.com:$1/$2.git"
-  git clone git@git.corp.adobe.com:$1/$2.git
-}
-
-# frag a named directory in all directories one level below this
-# mostly used to reclaim disk space from node_modules madness
-function fragFolder {
-
-  # could just try find . -type d -maxdepth 2 -name "*$1*" -exec rm -ri {} \;
-  # but this works and I like the echo messages better
-
-  FRAG_TARGETS=`find . -type d -maxdepth 2 -name *$1*`
-
-  if [ -z "$FRAG_TARGETS" ]
-  then
-    echo "No targets found."
-  fi
-
-  for target in $FRAG_TARGETS; do
-    echo "fragging $target"
-    rm -rf $target
-  done;
-}
-
-# create a file and open it
-function newfile() {
-  touch $1; edit $1
-}
-
-# create a directory and change to it
-function mkcdir() {
-  mkdir -p "$1"; cd "$1";
-}
-
-# new terminal window at current location
-function nwh() {
-    osascript -e 'on run argv
-        tell app "Terminal"
-            do script "cd " & item 1 of argv
-        end tell
-    end run' `pwd`
-}
-
-function togglePhantom() {
-  if [ -z "$JENKINS_URL" ]
-  then
-    echo "setting JENKINS_URL=1"
-    export JENKINS_URL=1
-  else
-    echo "unset JENKINS_URL"
-    unset JENKINS_URL
-  fi
-}
-
-
-function tagfloat() {
-  VERSION=$1
-  FLOATING_TAG=$2
-  git tag -d $FLOATING_TAG
-  git push origin :refs/tags/$FLOATING_TAG || { return; }
-  git tag -a $FLOATING_TAG $VERSION -m "@releng - $FLOATING_TAG floating tag based on $VERSION" || { return; }
-  git push origin $FLOATING_TAG || { return; }
-}
-
-function tagpre() {
-  VERSION=$1
-  git tag -d pre
-  git push origin :refs/tags/pre || { return; }
-  git tag -a pre $VERSION -m "@releng - pre tag based on $VERSION" || { return; }
-  git push origin pre || { return; }
-}
-
-function releasepre() {
-  VERSION=$1
-  # todo: warn if modules linked
-  # todo: npm install latest
-  git tag -d pre
-  git checkout master || { return; }
-  git pull origin master || { return; }
-  git checkout prerelease || { return; }
-  git pull origin prerelease || { return; }
-  git merge master -m '@releng - merge master into prerelease' || { return; }
-  npm i || { return; }
-  grunt release || { return; } # todo: pass version here
-  tagpre $VERSION || { return; }
-  git checkout master
-}
-
-function rmtag() {
-  git tag -d $1
-  git push origin :refs/tags/$1
-}
-
-function minty() {
-  say -v Zarvox "begin"
-  if [[ -d node_modules ]]; then
-    nn
-  else
-    say "no nuke for you"
-  fi
-  git up || { return; }
-  ni || { return; }
-  grunt || { return; }
-}
-
-
-# clone a coralui component repo, because I hate redundant typing
-function coral-clone() {
-  echo "trying git clone $ADOBE_GITHUB:Coral/coralui-component-$1"
-  git clone $ADOBE_GITHUB:Coral/coralui-component-$1 $1
-}
-
-# git-cheat burp some of these aliases
-# so I can actually use them
-alias git-cheat="open -a /Applications/Google\ Chrome.app $DOTFILES_PATH/git-cheat.md"
-
+#alias gplm='g plm'
+#alias gpm='g pm'
 
 # markdown-cheat remind me I haz stupid
 # so I can actually use them
-alias markdown-cheat="open -a /Applications/Google\ Chrome.app $DOTFILES_PATH/markdown-cheat.md"
+alias markdown-cheat="open -a /Applications/Google\ Chrome.app https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"
+
+# -------------------------
+# super random lolz
+# -------------------------
+#
+alias ding='afplay $SOUNDS_PATH/Ping.aiff'
+alias bitch='sudo' # kristofer joseph <3
+alias make-me-a-sandwich='echo "make it yourself, $USER..."'
+alias beerme='echo "WOOOOOOOOOOO! 🍺 🍺 🍺 🍺 🍺 🍺 !!!!!!!!!"'
+

@@ -44,6 +44,7 @@
   rsom = !git reset --soft master
   rup =  !git remote update
   rupru = !git remote update -p
+  seeconfig = config -l
   st = status --short
   stl = status
   t = tag

@@ -28,5 +28,5 @@ echo ---------------------------------------------------------------
 # cowsay -f "${COWS[COW_NUM]}" $greet
 # fortune | cowsay | toilet --gay -f term
 echo "$greet"
-echo "You made it!"
+echo "LET'S DO THIS"
 echo ---------------------------------------------------------------

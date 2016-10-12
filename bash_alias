@@ -9,6 +9,7 @@ alias epoch='date "+%s"'
 alias ff='findfile'
 alias findfile='find . -name'
 alias fixbash='edit $DOTFILES_PATH'
+alias fix-ddwrt='NOW=`date "+%m%d%H%M%Y"`; ssh root@192.168.1.10'
 alias ip='ifconfig | grep inet\ '
 alias iplan='ifconfig en3 | grep inet\ '
 alias ipwifi='ifconfig en0 | grep inet\ '
@@ -33,20 +34,23 @@ alias wsvr='python -m SimpleHTTPServer'
 # navigations
 # -------------------------
 #
-alias cdcode='cd ~/Documents/code'
-alias cdtools='cd ~/Documents/code/tools'
-alias cdxd='cd ~/Documents/code/xd'
-alias cdfoo='cd ~/Documents/code/tehfoo'
-alias cdcoralui='cd ~/Documents/code/xd/coralui/'
-alias cdcomponents='cd ~/Documents/code/xd/coralui/packages/components'
+export CORALUI_ROOT="~/Documents/code/adobe-design/misc-coral/coralui"
+alias cdcode='cdl ~/Documents/code'
+alias cdtools='cdl ~/Documents/code/tools'
+alias cdxd='cdl ~/Documents/code/adobe-design'
+alias cdad='cdl ~/Documents/code/adobe-design'
+alias cdfoo='cdl ~/Documents/code/tehfoo'
+alias cdcoralui='cdl ~/Documents/code/adobe-design/misc-coral/coralui/'
+alias cdcomponents="cdl $CORALUI_ROOT/packages/components"
 
-alias cdocs='cdxd; cd docs-for-coralui'
+alias cdocs='cdad; cd docs-for-coralui'
 alias components='cdcomponents'
 alias cmpt='cdcomponents'
 alias coralui='cdcoralui'
 alias coral='cdcoralui'
 alias cui='cdcoralui'
-alias xd='cdxd'
+alias xd='cdad'
+alias ad='cdad'
 
 
 # -------------------------

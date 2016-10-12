@@ -21,7 +21,7 @@
   c = commit
   ca = !git commit -a
   cam = !git commit --amend
-  cleanup = !git bnuke && git gc && git clean -xdf
+  cleanup = !git branchnuke && git gc && git clean -xdf
   cm = !git commit -m
   co = checkout
   cob = !git checkout -b

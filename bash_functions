@@ -186,4 +186,18 @@ function rmtag() {
   git push origin :refs/tags/$1
 }
 
+function cdl() {
+  cd "$@" && ll && printf "Now in \033[0;35m$PWD\n";
+}
+
+
+function checkNvm() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
 

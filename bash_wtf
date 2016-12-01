@@ -10,15 +10,6 @@ ulimit -S -n 2048
 export EDITOR="subl -w"
 
 # --------------------------------
-# SANE LSCOLORS
-#
-# ... because man pages are hard to read apparently, and
-# also because setting a 22 character string with arbitrary letter values
-# to represent colors is pretty stupid if you're a human being.
-#
-# the original problem we're solving is making a config string
-# based on this information from the ls man page
-#
 #  colors codes              pair position in config string
 #  --------------            ----------------------
 #  (caps makes bold)         1 directory
@@ -56,9 +47,6 @@ LS_BRIGHT_WHITE="H" # what even bold light gray ffs
 LS_DEFAULT="x"
 
 # this is the part you can fiddle with
-# make entries in "$FOREGROUND $BACKGROUND" pairs
-# leave them $LS_DEFAULT if you can't handle the pressure
-# yeah, this is a bit of sausage making but oh well
 DIRECTORY="$LS_CYAN $LS_DEFAULT"
 SYMLINK="$LS_BOLD_GREEN $LS_BLUE"
 SOCKET="$LS_BOLD_MAGENTA $LS_DEFAULT"
@@ -71,27 +59,9 @@ EXECUTABLE_SETGID="$LS_DEFAULT $LS_DEFAULT"
 DW_WITH_T="$LS_DEFAULT $LS_DEFAULT"
 DW_WITHOUT_T="$LS_DEFAULT $LS_DEFAULT"
 
-# let's do some making the actual config by concatentation
-# of the attribute vars above in the right config order
-# you can see inside the sausage here as well, but hey man
-# it's still a step up from the way we do this usually
-# don't worry about the spaces, they make it sorta readable for now
-# and this is a freakin computer it's going to eat those spaces for lunch
 LS_COLORS="$DIRECTORY $SYMLINK $SOCKET $PIPE $EXECUTABLE $BLOCK_SPECIAL $CHARACTER_SPECIAL"
-# Scientist: "You know, you repeat yourself sometimes"
 LS_COLORS="$LS_COLORS $EXECUTABLE_SETUID $EXECUTABLE_SETGID $DW_WITH_T $DW_WITHOUT_T"
-
-
-# READABLE_LS_COLORS=Ex|Fx|Bx|Dx|Cx|eg|ed|ab|ag|ac|ad
-# READABLE_LS_COLORS=gxCexxxxxxxx
-# READABLE_LS_COLORS=gx Ce fX fX bg Gx Gx bx fx HX HX
-# READABLE_LS_COLORS=fxCecxdxBx
-
-# ok we put the 10lbs of shit in the 5lb bag but we need to
-# make that space delimited string usable by the shell
-# oh ya and export that shit so your ls output will be pretty
 export LSCOLORS="${LS_COLORS//[[:space:]]/}"
-# now just switch the whole thing on and BAM colors yay 4 you
 export CLICOLOR=1
 
 # --------------------------------

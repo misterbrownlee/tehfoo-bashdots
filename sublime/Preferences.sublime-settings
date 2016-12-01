@@ -18,7 +18,8 @@
 		"js",
 		"solutionswitcher",
 		"orgswitcher",
-		"menubar"
+		"menubar",
+		"cssdoc"
 	],
 	"auto_complete_commit_on_tab": true,
 	"binary_file_patterns":
@@ -80,6 +81,5 @@
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": false,
-	"trim_trailing_white_space_on_save": false,
 	"wide_caret": true
 }

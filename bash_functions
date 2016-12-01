@@ -80,6 +80,20 @@ function togglePhantom() {
   fi
 }
 
+# ------------------------------------------------
+# make karma not try to find phantom.js
+#
+function ipmeow() {
+  STOP=${1:-20}
+  MEOW=0
+  until [ $MEOW = $STOP ]; do
+      ip
+      echo -e ''
+      ((MEOW++))
+      sleep 4
+  done
+}
+
 
 # ------------------------------------------------
 # freshen up an npm based repository
@@ -186,8 +200,44 @@ function rmtag() {
   git push origin :refs/tags/$1
 }
 
+
+# ------------------------------------------------
+# shortcuts to pop into and list folders in one move
+#
+function cdad() {
+
+  WHAT="${COLOR_LIGHT_GREEN}cdad"
+  WHAT+=" $1${COLOR_NC}"
+
+  echo -e "\nYou say $WHAT like I should know what that means...\n"
+
+  case "$1" in
+    dna)
+      echo -e "Oh ... $WHAT is mapped to dna.corp!\n"
+      cdl "$AD_CODE_ROOT/dna.corp"
+      return
+      ;;
+    css)
+      echo -e "Hmm ... $WHAT is mapped to spectrum-css!\n"
+      cdl "$AD_CODE_ROOT/spectrum-css"
+      return
+      ;;
+    bal)
+      echo -e "Ah ha ... $WHAT is mapped to balthazar!\n"
+      cdl "$AD_CODE_ROOT/balthazar"
+      return
+      ;;
+    *)
+      echo -e "$WHAT is not something I know about... \n"
+      echo -e "I'll just cd to ${COLOR_LIGHT_GREEN}$AD_CODE_ROOT/$1${COLOR_NC}\n"
+      ;;
+  esac
+
+  cd "$AD_CODE_ROOT/$1" && ll && printf "Now in \033[0;35m$PWD\n"
+}
+
 function cdl() {
-  cd "$@" && ll && printf "Now in \033[0;35m$PWD\n";
+  cd "$@" && ll && printf "\nArrived at: ${COLOR_LIGHT_BLUE}$PWD\n";
 }
 
 

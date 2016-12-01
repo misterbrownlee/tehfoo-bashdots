@@ -17,6 +17,9 @@ alias ll='ls -lah'
 alias logcat='adb logcat'
 alias mnt='adb shell'
 alias now='date +"%m-%d-%Y %T"'
+alias nr='npm run'
+alias nrb='npm run build'
+alias nrd='npm run dev'
 alias passgen='openssl rand -base64 32'
 alias psrv='wsvr'
 alias reload-bash='rlbash'
@@ -34,15 +37,15 @@ alias wsvr='python -m SimpleHTTPServer'
 # navigations
 # -------------------------
 #
+#  how lazy am I?  Pretty fucking lazy it turns out.
+#
 export CORALUI_ROOT="~/Documents/code/adobe-design/misc-coral/coralui"
 alias cdcode='cdl ~/Documents/code'
 alias cdtools='cdl ~/Documents/code/tools'
 alias cdxd='cdl ~/Documents/code/adobe-design'
-alias cdad='cdl ~/Documents/code/adobe-design'
 alias cdfoo='cdl ~/Documents/code/tehfoo'
 alias cdcoralui='cdl ~/Documents/code/adobe-design/misc-coral/coralui/'
 alias cdcomponents="cdl $CORALUI_ROOT/packages/components"
-
 alias cdocs='cdad; cd docs-for-coralui'
 alias components='cdcomponents'
 alias cmpt='cdcomponents'
@@ -51,21 +54,34 @@ alias coral='cdcoralui'
 alias cui='cdcoralui'
 alias xd='cdad'
 alias ad='cdad'
+alias back='cdl -'
+alias code='cdad'
+alias docs='cdl ~/Documents'
+alias home='cdl ~'
+alias mine='cdl ~'
+alias desk='cdl ~/Desktop'
+alias desktop='cdl ~/Desktop'
+alias root='echo "YOU GOT NOTHIN"; cdl ~'
+alias dna='cdad dna'
+alias css='cdad css'
+alias bal='cdad bal'
+alias up='cd ..'
 
 
 # -------------------------
 # building things
 # -------------------------
 #
-alias dev='grunt dev --connect-port='
+alias dev='nrd'
+#alias dev='grunt dev --connect-port='
 alias gcc='xcrun gcc'
-alias bdd='grunt default dev --devOnly'
-alias bddd='grunt default dev-dist'
-alias bd3='bddd'
-alias bd='grunt default'
-alias b='grunt'
-alias bt='grunt run-tests'
-alias bdebug='node-debug /usr/local/lib/node_modules/grunt-cli/bin/grunt'
+# alias bdd='grunt default dev --devOnly'
+# alias bddd='grunt default dev-dist'
+# alias bd3='bddd'
+alias bd='nr default'
+alias b='nrb'
+alias bt='npm run test'
+# alias bdebug='node-debug /usr/local/lib/node_modules/grunt-cli/bin/grunt'
 
 
 # -------------------------

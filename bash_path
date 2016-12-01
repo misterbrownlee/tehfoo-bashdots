@@ -1,5 +1,9 @@
 echo '  loading paths'
 
+# where my stuff is
+AD_CODE_ROOT="/Users/brownlee/Documents/code/adobe-design"
+export AD_CODE_ROOT
+
 # git
 GIT_PATH="/usr/local/bin/git"
 
@@ -17,8 +21,8 @@ MORE_SOUNDS_PATH=/System/Library/PrivateFrameworks/ScreenReader.framework/Versio
 # ANDROID_SDK="~/projects/tools/sdks/android_latest"
 # ANDROID_PATHS="$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools"
 
-# npm global
-NPM_GLOBAL=/usr/local/share/npm/bin
+# npm global ... .nvm doesn't seem to use this
+# NPM_GLOBAL=/usr/local/share/npm/bin
 
 # hates RVM
 # RVM=$HOME/.rvm/bin
